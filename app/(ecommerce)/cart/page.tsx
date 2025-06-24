@@ -1,15 +1,22 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { Minus, Plus, ShoppingBag, Trash } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { useCart } from "@/components/ecommerce/cart-provider"
+import Link from "next/link";
+import Image from "next/image";
+import { Minus, Plus, ShoppingBag, Trash } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { useCart } from "@/components/ecommerce/cart-provider";
 
 export default function CartPage() {
-  const { cartItems, removeFromCart, updateQuantity, subtotal, clearCart } = useCart()
+  const { cartItems, removeFromCart, updateQuantity, subtotal, clearCart } =
+    useCart();
 
   if (cartItems.length === 0) {
     return (
@@ -17,13 +24,15 @@ export default function CartPage() {
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <ShoppingBag className="h-16 w-16 text-muted-foreground mb-4" />
           <h1 className="text-2xl font-bold">Your cart is empty</h1>
-          <p className="text-muted-foreground mt-2">Looks like you haven't added anything to your cart yet.</p>
+          <p className="text-muted-foreground mt-2">
+            Looks like you haven't added anything to your cart yet.
+          </p>
           <Button asChild className="mt-6">
             <Link href="/products">Continue Shopping</Link>
           </Button>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -37,7 +46,12 @@ export default function CartPage() {
               <CardContent className="p-0">
                 <div className="flex flex-col sm:flex-row">
                   <div className="relative w-full sm:w-[120px] h-[120px]">
-                    <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+                    <Image
+                      src={item.image || "/placeholder.svg"}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div className="p-4 flex-1 flex flex-col sm:flex-row sm:items-center">
                     <div className="flex-1">
@@ -53,16 +67,22 @@ export default function CartPage() {
                         variant="outline"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, (item.quantity || 1) - 1)
+                        }
                       >
                         <Minus className="h-3 w-3" />
                       </Button>
-                      <span className="w-10 text-center">{item.quantity || 1}</span>
+                      <span className="w-10 text-center">
+                        {item.quantity || 1}
+                      </span>
                       <Button
                         variant="outline"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, (item.quantity || 1) + 1)
+                        }
                       >
                         <Plus className="h-3 w-3" />
                       </Button>
@@ -124,5 +144,5 @@ export default function CartPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

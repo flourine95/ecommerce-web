@@ -1,11 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Download, Printer } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Download, Printer } from "lucide-react";
 
 const reportTypes = [
   "Financial Summary",
@@ -14,7 +27,7 @@ const reportTypes = [
   "Risk Assessment",
   "Marketing Campaign Analysis",
   "Operational Efficiency",
-]
+];
 
 const dummyReportData = {
   "Financial Summary": [
@@ -32,28 +45,30 @@ const dummyReportData = {
     { id: 5, metric: "Churn Rate", value: "2.3%" },
   ],
   // Add more report types here
-}
+};
 
 export function ReportsTab() {
-  const [selectedReport, setSelectedReport] = useState(reportTypes[0])
+  const [selectedReport, setSelectedReport] = useState(reportTypes[0]);
 
   const handleGenerateReport = () => {
-    console.log(`Generating ${selectedReport} report...`)
-  }
+    console.log(`Generating ${selectedReport} report...`);
+  };
 
   const handleDownloadReport = () => {
-    console.log(`Downloading ${selectedReport} report...`)
-  }
+    console.log(`Downloading ${selectedReport} report...`);
+  };
 
   const handlePrintReport = () => {
-    console.log(`Printing ${selectedReport} report...`)
-  }
+    console.log(`Printing ${selectedReport} report...`);
+  };
 
   return (
     <div className="space-y-4">
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl font-semibold">Generate Report</CardTitle>
+          <CardTitle className="text-xl font-semibold">
+            Generate Report
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex items-center space-x-4">
           <Select value={selectedReport} onValueChange={setSelectedReport}>
@@ -73,7 +88,9 @@ export function ReportsTab() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl font-semibold">{selectedReport} Report</CardTitle>
+          <CardTitle className="text-xl font-semibold">
+            {selectedReport} Report
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
@@ -105,5 +122,5 @@ export function ReportsTab() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

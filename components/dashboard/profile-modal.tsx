@@ -1,37 +1,42 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { CreditCard, Edit2, Save, Trash2 } from "lucide-react"
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { CreditCard, Edit2, Save, Trash2 } from "lucide-react";
 
 interface ProfileModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 interface CardInfo {
-  type: string
-  number: string
-  expiry: string
+  type: string;
+  number: string;
+  expiry: string;
 }
 
 interface UserProfile {
-  name: string
-  email: string
-  company: string
-  phone: string
-  accountNumber: string
-  bankName: string
-  cards: CardInfo[]
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  accountNumber: string;
+  bankName: string;
+  cards: CardInfo[];
 }
 
 export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
-  const [isEditing, setIsEditing] = useState(false)
+  const [isEditing, setIsEditing] = useState(false);
   const [userProfile, setUserProfile] = useState<UserProfile>({
     name: "Dollar Gill",
     email: "dollar@example.com",
@@ -44,24 +49,24 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
       { type: "Amex", number: "***********2468", expiry: "06/25" },
       { type: "Mastercard", number: "************9876", expiry: "03/26" },
     ],
-  })
+  });
 
   const handleInputChange = (field: keyof UserProfile, value: string) => {
-    setUserProfile((prev) => ({ ...prev, [field]: value }))
-  }
+    setUserProfile((prev) => ({ ...prev, [field]: value }));
+  };
 
   const handleSave = () => {
-    setIsEditing(false)
+    setIsEditing(false);
     // Here you would typically send the updated profile to your backend
-    console.log("Saving profile:", userProfile)
-  }
+    console.log("Saving profile:", userProfile);
+  };
 
   const handleRemoveCard = (index: number) => {
     setUserProfile((prev) => ({
       ...prev,
       cards: prev.cards.filter((_, i) => i !== index),
-    }))
-  }
+    }));
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -72,7 +77,10 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
         <div className="grid gap-4 py-4">
           <div className="flex items-center gap-4">
             <Avatar className="h-20 w-20">
-              <AvatarImage src="https://github.com/shadcn.png" alt={userProfile.name} />
+              <AvatarImage
+                src="https://github.com/shadcn.png"
+                alt={userProfile.name}
+              />
               <AvatarFallback>
                 {userProfile.name
                   .split(" ")
@@ -82,7 +90,9 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
             </Avatar>
             <div>
               <h2 className="text-2xl font-bold">{userProfile.name}</h2>
-              <p className="text-sm text-muted-foreground">{userProfile.email}</p>
+              <p className="text-sm text-muted-foreground">
+                {userProfile.email}
+              </p>
             </div>
             <Button
               variant="outline"
@@ -90,7 +100,11 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
               className="ml-auto"
               onClick={() => (isEditing ? handleSave() : setIsEditing(true))}
             >
-              {isEditing ? <Save className="h-4 w-4" /> : <Edit2 className="h-4 w-4" />}
+              {isEditing ? (
+                <Save className="h-4 w-4" />
+              ) : (
+                <Edit2 className="h-4 w-4" />
+              )}
             </Button>
           </div>
           <div className="grid gap-4">
@@ -137,7 +151,11 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="accountNumber">Account Number</Label>
-                <Input id="accountNumber" value={userProfile.accountNumber} readOnly />
+                <Input
+                  id="accountNumber"
+                  value={userProfile.accountNumber}
+                  readOnly
+                />
               </div>
               <div>
                 <Label htmlFor="bankName">Bank Name</Label>
@@ -156,11 +174,17 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
                     <CreditCard className="h-6 w-6" />
                     <div>
                       <p className="font-medium">{card.type}</p>
-                      <p className="text-sm text-muted-foreground">{card.number}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {card.number}
+                      </p>
                     </div>
                     <p className="ml-auto text-sm">Expires: {card.expiry}</p>
                     {isEditing && (
-                      <Button variant="destructive" size="icon" onClick={() => handleRemoveCard(index)}>
+                      <Button
+                        variant="destructive"
+                        size="icon"
+                        onClick={() => handleRemoveCard(index)}
+                      >
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     )}
@@ -172,5 +196,5 @@ export function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

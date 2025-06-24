@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { DollarSign, Users, CreditCard, TrendingUp } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DollarSign, Users, CreditCard, TrendingUp } from "lucide-react";
 
 const cards = [
   {
@@ -30,7 +30,7 @@ const cards = [
     description: "+5.4% from last month",
     trend: "up",
   },
-]
+];
 
 export function OverviewCards() {
   return (
@@ -58,5 +58,5 @@ export function OverviewCards() {
         </Card>
       ))}
     </>
-  )
+  );
 }

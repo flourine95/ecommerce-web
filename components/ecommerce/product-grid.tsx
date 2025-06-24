@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ShoppingCart } from "lucide-react"
-import { useCart } from "@/components/ecommerce/cart-provider"
+import Link from "next/link";
+import Image from "next/image";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/components/ecommerce/cart-provider";
 
 type Product = {
-  id: number
-  name: string
-  price: number
-  image: string
-  category: string
-  isNew: boolean
-}
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  isNew: boolean;
+};
 
 export function ProductGrid({ products }: { products: Product[] }) {
   return (
@@ -24,11 +24,11 @@ export function ProductGrid({ products }: { products: Product[] }) {
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
-  )
+  );
 }
 
 function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useCart()
+  const { addToCart } = useCart();
 
   return (
     <Card className="overflow-hidden group">
@@ -40,7 +40,9 @@ function ProductCard({ product }: { product: Product }) {
             fill
             className="object-cover transition-transform group-hover:scale-105"
           />
-          {product.isNew && <Badge className="absolute top-2 right-2">New</Badge>}
+          {product.isNew && (
+            <Badge className="absolute top-2 right-2">New</Badge>
+          )}
         </div>
       </Link>
       <CardContent className="p-4">
@@ -56,5 +58,5 @@ function ProductCard({ product }: { product: Product }) {
         </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

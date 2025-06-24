@@ -1,4 +1,4 @@
-import { ProductGrid } from "@/components/ecommerce/product-grid"
+import { ProductGrid } from "@/components/ecommerce/product-grid";
 
 const products = [
   {
@@ -65,16 +65,18 @@ const products = [
     category: "men",
     isNew: false,
   },
-]
+];
 
 export default function ProductsPage() {
   return (
     <div className="container px-4 py-12 mx-auto">
       <div className="flex flex-col items-center text-center space-y-2 mb-12">
         <h1 className="text-3xl font-bold tracking-tight">All Products</h1>
-        <p className="text-muted-foreground max-w-[600px]">Browse our complete collection of premium clothing</p>
+        <p className="text-muted-foreground max-w-[600px]">
+          Browse our complete collection of premium clothing
+        </p>
       </div>
       <ProductGrid products={products} />
     </div>
-  )
+  );
 }

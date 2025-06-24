@@ -1,17 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { OverviewCards } from "@/components/analytics/overview-cards"
-import { RevenueChart } from "@/components/analytics/revenue-chart"
-import { RecentTransactions } from "@/components/analytics/recent-transactions"
-import { AccountGrowth } from "@/components/analytics/account-growth"
-import { TopProducts } from "@/components/analytics/top-products"
-import { UserActivity } from "@/components/analytics/user-activity"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { OverviewCards } from "@/components/analytics/overview-cards";
+import { RevenueChart } from "@/components/analytics/revenue-chart";
+import { RecentTransactions } from "@/components/analytics/recent-transactions";
+import { AccountGrowth } from "@/components/analytics/account-growth";
+import { TopProducts } from "@/components/analytics/top-products";
+import { UserActivity } from "@/components/analytics/user-activity";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function OverviewTab() {
-  const [comparisonPeriod, setComparisonPeriod] = useState("previous_month")
+  const [comparisonPeriod, setComparisonPeriod] = useState("previous_month");
 
   return (
     <>
@@ -45,7 +51,9 @@ export function OverviewTab() {
         </Card>
         <Card className="col-span-3">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Recent Transactions</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              Recent Transactions
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <RecentTransactions />
@@ -55,7 +63,9 @@ export function OverviewTab() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mt-4">
         <Card className="col-span-4">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Account Growth</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              Account Growth
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <AccountGrowth comparisonPeriod={comparisonPeriod} />
@@ -63,7 +73,9 @@ export function OverviewTab() {
         </Card>
         <Card className="col-span-3">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Top Products</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              Top Products
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <TopProducts />
@@ -73,7 +85,9 @@ export function OverviewTab() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mt-4">
         <Card className="col-span-4">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">User Activity</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              User Activity
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <UserActivity />
@@ -81,5 +95,5 @@ export function OverviewTab() {
         </Card>
       </div>
     </>
-  )
+  );
 }

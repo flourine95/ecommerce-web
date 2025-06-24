@@ -1,35 +1,51 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CheckCircle2 } from "lucide-react"
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { CheckCircle2 } from "lucide-react";
 
-const steps = ["Select Contact", "Enter Amount", "OTP Verification", "Confirmation"]
+const steps = [
+  "Select Contact",
+  "Enter Amount",
+  "OTP Verification",
+  "Confirmation",
+];
 
 const contacts = [
   { id: "1", name: "John Doe", phoneNumber: "+1 234 567 8901" },
   { id: "2", name: "Jane Smith", phoneNumber: "+1 987 654 3210" },
   { id: "3", name: "Alice Johnson", phoneNumber: "+1 555 123 4567" },
-]
+];
 
 export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [selectedContact, setSelectedContact] = useState(null)
-  const [amount, setAmount] = useState("")
-  const [otp, setOtp] = useState("")
+  const [currentStep, setCurrentStep] = useState(0);
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [amount, setAmount] = useState("");
+  const [otp, setOtp] = useState("");
 
   const handleContinue = () => {
     if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1)
+      setCurrentStep(currentStep + 1);
     } else {
-      onRequestMoney(Number.parseFloat(amount), selectedContact)
-      onClose()
+      onRequestMoney(Number.parseFloat(amount), selectedContact);
+      onClose();
     }
-  }
+  };
 
   const renderStepContent = () => {
     switch (currentStep) {
@@ -37,7 +53,11 @@ export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
         return (
           <div className="space-y-4">
             <Label htmlFor="contact">Select Contact</Label>
-            <Select onValueChange={(value) => setSelectedContact(contacts.find((c) => c.id === value))}>
+            <Select
+              onValueChange={(value) =>
+                setSelectedContact(contacts.find((c) => c.id === value))
+              }
+            >
               <SelectTrigger id="contact">
                 <SelectValue placeholder="Select a contact" />
               </SelectTrigger>
@@ -58,7 +78,7 @@ export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
               </div>
             )}
           </div>
-        )
+        );
       case 1:
         return (
           <div className="space-y-4">
@@ -71,14 +91,20 @@ export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
               onChange={(e) => setAmount(e.target.value)}
             />
           </div>
-        )
+        );
       case 2:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">Enter the OTP sent to your registered mobile number</p>
-            <Input placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} />
+            <p className="text-sm text-muted-foreground">
+              Enter the OTP sent to your registered mobile number
+            </p>
+            <Input
+              placeholder="Enter OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
           </div>
-        )
+        );
       case 3:
         return (
           <div className="text-center space-y-4">
@@ -88,9 +114,9 @@ export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
               ${amount} has been requested from {selectedContact.name}.
             </p>
           </div>
-        )
+        );
     }
-  }
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -102,7 +128,10 @@ export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
           {renderStepContent()}
           <div className="flex justify-between">
             {currentStep > 0 && currentStep < steps.length - 1 && (
-              <Button variant="outline" onClick={() => setCurrentStep(currentStep - 1)}>
+              <Button
+                variant="outline"
+                onClick={() => setCurrentStep(currentStep - 1)}
+              >
                 Back
               </Button>
             )}
@@ -113,5 +142,5 @@ export function RequestMoneyModal({ isOpen, onClose, onRequestMoney }) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

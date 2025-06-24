@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
 
 const recentTransactions = [
   {
@@ -29,7 +29,8 @@ const recentTransactions = [
     amount: "+$1,000.00",
     status: "success",
     date: "2023-07-18",
-    avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dd.jpg-4MCwPC2Bec6Ume26Yo1kao3CnONxDg.jpeg",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dd.jpg-4MCwPC2Bec6Ume26Yo1kao3CnONxDg.jpeg",
   },
   {
     id: "4",
@@ -38,7 +39,8 @@ const recentTransactions = [
     amount: "-$50.75",
     status: "failed",
     date: "2023-07-17",
-    avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9334178.jpg-Y74tW6XFO68g7N36SE5MSNDNVKLQ08.jpeg",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9334178.jpg-Y74tW6XFO68g7N36SE5MSNDNVKLQ08.jpeg",
   },
   {
     id: "5",
@@ -47,9 +49,10 @@ const recentTransactions = [
     amount: "+$720.00",
     status: "success",
     date: "2023-07-16",
-    avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5295.jpg-fLw0wGGZp8wuTzU5dnyfjZDwAHN98a.jpeg",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5295.jpg-fLw0wGGZp8wuTzU5dnyfjZDwAHN98a.jpeg",
   },
-]
+];
 
 export function RecentTransactions() {
   return (
@@ -62,8 +65,12 @@ export function RecentTransactions() {
               <AvatarFallback>{transaction.name.charAt(0)}</AvatarFallback>
             </Avatar>
             <div className="ml-4 flex-1 space-y-1">
-              <p className="text-sm font-medium leading-none">{transaction.name}</p>
-              <p className="text-xs text-muted-foreground">{transaction.email}</p>
+              <p className="text-sm font-medium leading-none">
+                {transaction.name}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                {transaction.email}
+              </p>
             </div>
             <div className="ml-auto text-right">
               <p
@@ -71,11 +78,13 @@ export function RecentTransactions() {
               >
                 {transaction.amount}
               </p>
-              <p className="text-xs text-muted-foreground">{transaction.date}</p>
+              <p className="text-xs text-muted-foreground">
+                {transaction.date}
+              </p>
             </div>
           </CardContent>
         </Card>
       ))}
     </div>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Home,
   BarChart2,
@@ -19,10 +19,15 @@ import {
   HelpCircle,
   Menu,
   ChevronLeft,
-} from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: Home },
@@ -36,17 +41,17 @@ const navigation = [
   { name: "Permissions", href: "/permissions", icon: Shield },
   { name: "Chat", href: "/chat", icon: MessagesSquare },
   { name: "Meetings", href: "/meetings", icon: Video },
-]
+];
 
 const bottomNavigation = [
   { name: "Settings", href: "/settings", icon: Settings },
   { name: "Help", href: "/help", icon: HelpCircle },
-]
+];
 
 export function Sidebar() {
-  const pathname = usePathname()
-  const [isCollapsed, setIsCollapsed] = useState(false)
-  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const pathname = usePathname();
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const NavItem = ({ item, isBottom = false }) => (
     <Tooltip delayDuration={0}>
@@ -71,7 +76,7 @@ export function Sidebar() {
         </TooltipContent>
       )}
     </Tooltip>
-  )
+  );
 
   return (
     <TooltipProvider>
@@ -87,13 +92,23 @@ export function Sidebar() {
           className={cn(
             "fixed inset-y-0 z-20 flex flex-col bg-background transition-all duration-300 ease-in-out lg:static",
             isCollapsed ? "w-[72px]" : "w-72",
-            isMobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
+            isMobileOpen
+              ? "translate-x-0"
+              : "-translate-x-full lg:translate-x-0",
           )}
         >
           <div className="border-b border-border">
-            <div className={cn("flex h-16 items-center gap-2 px-4", isCollapsed && "justify-center px-2")}>
+            <div
+              className={cn(
+                "flex h-16 items-center gap-2 px-4",
+                isCollapsed && "justify-center px-2",
+              )}
+            >
               {!isCollapsed && (
-                <Link href="/public" className="flex items-center font-semibold">
+                <Link
+                  href="/public"
+                  className="flex items-center font-semibold"
+                >
                   <span className="text-lg">Flowers&Saints</span>
                 </Link>
               )}
@@ -103,8 +118,15 @@ export function Sidebar() {
                 className={cn("ml-auto h-8 w-8", isCollapsed && "ml-0")}
                 onClick={() => setIsCollapsed(!isCollapsed)}
               >
-                <ChevronLeft className={cn("h-4 w-4 transition-transform", isCollapsed && "rotate-180")} />
-                <span className="sr-only">{isCollapsed ? "Expand" : "Collapse"} Sidebar</span>
+                <ChevronLeft
+                  className={cn(
+                    "h-4 w-4 transition-transform",
+                    isCollapsed && "rotate-180",
+                  )}
+                />
+                <span className="sr-only">
+                  {isCollapsed ? "Expand" : "Collapse"} Sidebar
+                </span>
               </Button>
             </div>
           </div>
@@ -125,5 +147,5 @@ export function Sidebar() {
         </div>
       </>
     </TooltipProvider>
-  )
+  );
 }

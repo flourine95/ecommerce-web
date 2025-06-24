@@ -1,7 +1,7 @@
-import { AccountsOverview } from "@/components/dashboard/accounts-overview"
-import { RecentTransactions } from "@/components/dashboard/recent-transactions"
-import { QuickBillPay } from "@/components/dashboard/quick-bill-pay"
-import { BusinessMetrics } from "@/components/dashboard/business-metrics"
+import { AccountsOverview } from "@/components/dashboard/accounts-overview";
+import { RecentTransactions } from "@/components/dashboard/recent-transactions";
+import { QuickBillPay } from "@/components/dashboard/quick-bill-pay";
+import { BusinessMetrics } from "@/components/dashboard/business-metrics";
 
 export default function Dashboard() {
   return (
@@ -22,5 +22,5 @@ export default function Dashboard() {
 
       <BusinessMetrics />
     </div>
-  )
+  );
 }

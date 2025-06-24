@@ -1,10 +1,25 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
-import { useTheme } from "next-themes"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Bar,
+  BarChart,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { useTheme } from "next-themes";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useState } from "react";
 
 const customerSegmentationData = [
   { segment: "High Value", count: 1200 },
@@ -12,7 +27,7 @@ const customerSegmentationData = [
   { segment: "Low Value", count: 8500 },
   { segment: "At Risk", count: 1700 },
   { segment: "Lost", count: 800 },
-]
+];
 
 const retentionRateData = [
   { month: "Jan", rate: 95 },
@@ -21,7 +36,7 @@ const retentionRateData = [
   { month: "Apr", rate: 95 },
   { month: "May", rate: 97 },
   { month: "Jun", rate: 98 },
-]
+];
 
 const channelPerformanceData = [
   { channel: "Direct", acquisitions: 1200, revenue: 50000 },
@@ -29,11 +44,11 @@ const channelPerformanceData = [
   { channel: "Paid Search", acquisitions: 1800, revenue: 60000 },
   { channel: "Social Media", acquisitions: 1500, revenue: 45000 },
   { channel: "Email", acquisitions: 900, revenue: 30000 },
-]
+];
 
 export function AnalyticsTab() {
-  const { theme } = useTheme()
-  const [timeFrame, setTimeFrame] = useState("last_30_days")
+  const { theme } = useTheme();
+  const [timeFrame, setTimeFrame] = useState("last_30_days");
 
   return (
     <div className="space-y-4">
@@ -54,7 +69,9 @@ export function AnalyticsTab() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Customer Segmentation</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              Customer Segmentation
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -62,14 +79,19 @@ export function AnalyticsTab() {
                 <XAxis dataKey="segment" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="count" fill={theme === "dark" ? "#adfa1d" : "#0ea5e9"} />
+                <Bar
+                  dataKey="count"
+                  fill={theme === "dark" ? "#adfa1d" : "#0ea5e9"}
+                />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
         <Card className="col-span-3">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Customer Retention Rate</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              Customer Retention Rate
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -77,7 +99,11 @@ export function AnalyticsTab() {
                 <XAxis dataKey="month" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="rate" stroke={theme === "dark" ? "#adfa1d" : "#0ea5e9"} />
+                <Line
+                  type="monotone"
+                  dataKey="rate"
+                  stroke={theme === "dark" ? "#adfa1d" : "#0ea5e9"}
+                />
               </LineChart>
             </ResponsiveContainer>
           </CardContent>
@@ -86,7 +112,9 @@ export function AnalyticsTab() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold">Channel Performance</CardTitle>
+            <CardTitle className="text-xl font-semibold">
+              Channel Performance
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={300}>
@@ -95,8 +123,16 @@ export function AnalyticsTab() {
                 <YAxis yAxisId="left" />
                 <YAxis yAxisId="right" orientation="right" />
                 <Tooltip />
-                <Bar yAxisId="left" dataKey="acquisitions" fill={theme === "dark" ? "#adfa1d" : "#0ea5e9"} />
-                <Bar yAxisId="right" dataKey="revenue" fill={theme === "dark" ? "#1e40af" : "#3b82f6"} />
+                <Bar
+                  yAxisId="left"
+                  dataKey="acquisitions"
+                  fill={theme === "dark" ? "#adfa1d" : "#0ea5e9"}
+                />
+                <Bar
+                  yAxisId="right"
+                  dataKey="revenue"
+                  fill={theme === "dark" ? "#1e40af" : "#3b82f6"}
+                />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -107,24 +143,32 @@ export function AnalyticsTab() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Customer Lifetime Value</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                Customer Lifetime Value
+              </p>
               <p className="text-2xl font-bold">$1,250</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Net Promoter Score</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                Net Promoter Score
+              </p>
               <p className="text-2xl font-bold">72</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Customer Acquisition Cost</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                Customer Acquisition Cost
+              </p>
               <p className="text-2xl font-bold">$75</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-muted-foreground">Average Order Value</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                Average Order Value
+              </p>
               <p className="text-2xl font-bold">$120</p>
             </div>
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }

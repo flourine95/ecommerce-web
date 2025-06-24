@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { ChevronRight, Minus, Plus, ShoppingCart } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useCart } from "@/components/ecommerce/cart-provider"
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ChevronRight, Minus, Plus, ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useCart } from "@/components/ecommerce/cart-provider";
 
 // Mock product data - in a real app, you would fetch this from an API
 const products = [
@@ -103,18 +103,18 @@ const products = [
       "/placeholder.svg?height=600&width=600",
     ],
   },
-]
+];
 
 export default function ProductPage({ params }: { params: { id: string } }) {
-  const productId = Number.parseInt(params.id)
-  const product = products.find((p) => p.id === productId)
+  const productId = Number.parseInt(params.id);
+  const product = products.find((p) => p.id === productId);
 
-  const [quantity, setQuantity] = useState(1)
-  const [selectedSize, setSelectedSize] = useState("")
-  const [selectedColor, setSelectedColor] = useState("")
-  const [selectedImage, setSelectedImage] = useState(0)
+  const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedImage, setSelectedImage] = useState(0);
 
-  const { addToCart } = useCart()
+  const { addToCart } = useCart();
 
   if (!product) {
     return (
@@ -125,19 +125,19 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           <Link href="/products">Back to Products</Link>
         </Button>
       </div>
-    )
+    );
   }
 
   const handleAddToCart = () => {
-    if (!selectedSize || !selectedColor) return
+    if (!selectedSize || !selectedColor) return;
 
     addToCart({
       ...product,
       quantity,
       selectedSize,
       selectedColor,
-    })
-  }
+    });
+  };
 
   return (
     <div className="container px-4 py-12 mx-auto">
@@ -162,7 +162,9 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               fill
               className="object-cover"
             />
-            {product.isNew && <Badge className="absolute top-4 right-4">New</Badge>}
+            {product.isNew && (
+              <Badge className="absolute top-4 right-4">New</Badge>
+            )}
           </div>
 
           <div className="flex gap-4">
@@ -188,7 +190,9 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <div className="space-y-6">
           <div>
             <h1 className="text-3xl font-bold">{product.name}</h1>
-            <p className="text-2xl font-bold mt-2">${product.price.toFixed(2)}</p>
+            <p className="text-2xl font-bold mt-2">
+              ${product.price.toFixed(2)}
+            </p>
           </div>
 
           <p className="text-muted-foreground">{product.description}</p>
@@ -208,7 +212,11 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   </Button>
                 ))}
               </div>
-              {!selectedSize && <p className="text-sm text-muted-foreground mt-2">Please select a size</p>}
+              {!selectedSize && (
+                <p className="text-sm text-muted-foreground mt-2">
+                  Please select a size
+                </p>
+              )}
             </div>
 
             <div>
@@ -225,24 +233,41 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   </Button>
                 ))}
               </div>
-              {!selectedColor && <p className="text-sm text-muted-foreground mt-2">Please select a color</p>}
+              {!selectedColor && (
+                <p className="text-sm text-muted-foreground mt-2">
+                  Please select a color
+                </p>
+              )}
             </div>
 
             <div>
               <h3 className="font-medium mb-2">Quantity</h3>
               <div className="flex items-center">
-                <Button variant="outline" size="icon" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                >
                   <Minus className="h-4 w-4" />
                 </Button>
                 <span className="w-12 text-center">{quantity}</span>
-                <Button variant="outline" size="icon" onClick={() => setQuantity(quantity + 1)}>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
                   <Plus className="h-4 w-4" />
                 </Button>
               </div>
             </div>
           </div>
 
-          <Button size="lg" className="w-full" disabled={!selectedSize || !selectedColor} onClick={handleAddToCart}>
+          <Button
+            size="lg"
+            className="w-full"
+            disabled={!selectedSize || !selectedColor}
+            onClick={handleAddToCart}
+          >
             <ShoppingCart className="h-5 w-5 mr-2" />
             Add to Cart
           </Button>
@@ -260,19 +285,27 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <h4 className="font-medium">Material</h4>
-                  <p className="text-sm text-muted-foreground">{product.details.material}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {product.details.material}
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-medium">Fit</h4>
-                  <p className="text-sm text-muted-foreground">{product.details.fit}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {product.details.fit}
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-medium">Care</h4>
-                  <p className="text-sm text-muted-foreground">{product.details.care}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {product.details.care}
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-medium">Origin</h4>
-                  <p className="text-sm text-muted-foreground">{product.details.origin}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {product.details.origin}
+                  </p>
                 </div>
               </div>
             </TabsContent>
@@ -280,14 +313,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               <div>
                 <h4 className="font-medium">Shipping</h4>
                 <p className="text-sm text-muted-foreground">
-                  Free standard shipping on all orders over $100. Delivery within 3-5 business days.
+                  Free standard shipping on all orders over $100. Delivery
+                  within 3-5 business days.
                 </p>
               </div>
               <div>
                 <h4 className="font-medium">Returns</h4>
                 <p className="text-sm text-muted-foreground">
-                  We accept returns within 30 days of delivery. Items must be unworn, unwashed, and with the original
-                  tags attached.
+                  We accept returns within 30 days of delivery. Items must be
+                  unworn, unwashed, and with the original tags attached.
                 </p>
               </div>
             </TabsContent>
@@ -295,5 +329,5 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,8 +1,15 @@
-"use client"
+"use client";
 
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
-import { Card, CardContent } from "@/components/ui/card"
-import { useTheme } from "next-themes"
+import {
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTheme } from "next-themes";
 
 const data = [
   { month: "Jan", revenue: 2000 },
@@ -17,10 +24,10 @@ const data = [
   { month: "Oct", revenue: 3500 },
   { month: "Nov", revenue: 3800 },
   { month: "Dec", revenue: 4200 },
-]
+];
 
 export function RevenueChart() {
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -28,17 +35,22 @@ export function RevenueChart() {
         <Card className="border-none shadow-lg">
           <CardContent className="p-2">
             <p className="text-sm font-semibold">{label}</p>
-            <p className="text-sm text-muted-foreground">Revenue: ${payload[0].value.toLocaleString()}</p>
+            <p className="text-sm text-muted-foreground">
+              Revenue: ${payload[0].value.toLocaleString()}
+            </p>
           </CardContent>
         </Card>
-      )
+      );
     }
-    return null
-  }
+    return null;
+  };
 
   return (
     <ResponsiveContainer width="100%" height={350}>
-      <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+      >
         <XAxis
           dataKey="month"
           stroke={theme === "dark" ? "#888888" : "#333333"}
@@ -63,5 +75,5 @@ export function RevenueChart() {
         />
       </LineChart>
     </ResponsiveContainer>
-  )
+  );
 }

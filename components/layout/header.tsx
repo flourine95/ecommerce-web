@@ -1,17 +1,23 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, Search, ShoppingCart, User, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { useCart } from "@/components/ecommerce/cart-provider"
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useCart } from "@/components/ecommerce/cart-provider";
 
 export function Header() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const { cartItems } = useCart()
-  const cartItemCount = cartItems.length
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { cartItems } = useCart();
+  const cartItemCount = cartItems.length;
+  const routes = {
+    home: "/public",
+    products: "/products",
+    men: "/products/men",
+    women: "/products/women",
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
@@ -52,16 +58,28 @@ export function Header() {
         </Link>
 
         <nav className="mx-6 hidden md:flex items-center gap-6 text-sm">
-          <Link href="/public" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/public"
+            className="font-medium transition-colors hover:text-primary"
+          >
             Home
           </Link>
-          <Link href="/products" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/products"
+            className="font-medium transition-colors hover:text-primary"
+          >
             All Products
           </Link>
-          <Link href="/products/men" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/products/men"
+            className="font-medium transition-colors hover:text-primary"
+          >
             Men
           </Link>
-          <Link href="/products/women" className="font-medium transition-colors hover:text-primary">
+          <Link
+            href="/products/women"
+            className="font-medium transition-colors hover:text-primary"
+          >
             Women
           </Link>
         </nav>
@@ -69,14 +87,28 @@ export function Header() {
         <div className="ml-auto flex items-center gap-2">
           {isSearchOpen ? (
             <div className="relative flex items-center">
-              <Input type="search" placeholder="Search products..." className="w-[200px] md:w-[300px]" autoFocus />
-              <Button variant="ghost" size="icon" className="absolute right-0" onClick={() => setIsSearchOpen(false)}>
+              <Input
+                type="search"
+                placeholder="Search products..."
+                className="w-[200px] md:w-[300px]"
+                autoFocus
+              />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-0"
+                onClick={() => setIsSearchOpen(false)}
+              >
                 <X className="h-4 w-4" />
                 <span className="sr-only">Close search</span>
               </Button>
             </div>
           ) : (
-            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsSearchOpen(true)}
+            >
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </Button>
@@ -101,5 +133,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

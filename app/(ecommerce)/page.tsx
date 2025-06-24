@@ -1,9 +1,9 @@
-import Link from "next/link"
-import { ShoppingBag } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { FeaturedProducts } from "@/components/ecommerce/featured-products"
-import { HeroSection } from "@/components/ecommerce/hero-section"
-import { CategorySection } from "@/components/ecommerce/category-section"
+import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { FeaturedProducts } from "@/components/ecommerce/featured-products";
+import { HeroSection } from "@/components/ecommerce/hero-section";
+import { CategorySection } from "@/components/ecommerce/category-section";
 
 export default function Home() {
   return (
@@ -13,7 +13,9 @@ export default function Home() {
         <CategorySection />
         <FeaturedProducts />
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Ready to upgrade your style?</h2>
+          <h2 className="text-3xl font-bold tracking-tight">
+            Ready to upgrade your style?
+          </h2>
           <p className="max-w-[600px] text-muted-foreground">
             Discover our latest collections and find your perfect fit.
           </p>
@@ -26,5 +28,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

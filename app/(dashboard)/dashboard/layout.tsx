@@ -1,24 +1,24 @@
-import "@/app/globals.css"
-import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/layout/theme-provider"
-import { Sidebar } from "@/components/layout/sidebar"
-import { TopNav } from "@/components/layout/top-nav"
-import { TooltipProvider } from "@/components/ui/tooltip"
-import { SettingsProvider } from "@/contexts/settings-context"
-import type React from "react"
+import "@/app/globals.css";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/layout/theme-provider";
+import { Sidebar } from "@/components/layout/sidebar";
+import { TopNav } from "@/components/layout/top-nav";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { SettingsProvider } from "@/contexts/settings-context";
+import type React from "react";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Flowers&Saints Dashboard",
   description: "A modern, responsive financial dashboard",
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -40,5 +40,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

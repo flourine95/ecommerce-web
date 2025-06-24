@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { TrendingUp, Users, DollarSign, ArrowRight } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { TrendingUp, Users, DollarSign, ArrowRight } from "lucide-react";
 
 const metrics = [
   {
@@ -36,13 +36,14 @@ const metrics = [
     current: 165,
     unit: "$",
   },
-]
+];
 
 const statusColors = {
-  "On Track": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "On Track":
+    "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
   Behind: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
   Ahead: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-}
+};
 
 export function BusinessMetrics() {
   return (
@@ -57,14 +58,20 @@ export function BusinessMetrics() {
         {metrics.map((metric) => (
           <Card key={metric.id}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{metric.title}</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                {metric.title}
+              </CardTitle>
               <metric.icon className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <p className="text-xs text-muted-foreground">{metric.subtitle}</p>
               <div className="mt-2 space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className={`px-2 py-1 rounded-full ${statusColors[metric.status]}`}>{metric.status}</span>
+                  <span
+                    className={`px-2 py-1 rounded-full ${statusColors[metric.status]}`}
+                  >
+                    {metric.status}
+                  </span>
                   <span className="text-muted-foreground">
                     {metric.current} / {metric.target} {metric.unit}
                   </span>
@@ -80,7 +87,9 @@ export function BusinessMetrics() {
                     {metric.unit}
                     {metric.target.toLocaleString()}
                   </span>
-                  <span className="text-muted-foreground">{metric.progress}% complete</span>
+                  <span className="text-muted-foreground">
+                    {metric.progress}% complete
+                  </span>
                 </div>
               </div>
             </CardContent>
@@ -88,5 +97,5 @@ export function BusinessMetrics() {
         ))}
       </div>
     </div>
-  )
+  );
 }

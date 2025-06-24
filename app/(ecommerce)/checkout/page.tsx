@@ -1,33 +1,47 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { ChevronLeft, CreditCard, ShieldCheck } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Separator } from "@/components/ui/separator"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useCart } from "@/components/ecommerce/cart-provider"
+import { useState } from "react";
+import Link from "next/link";
+import { ChevronLeft, CreditCard, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useCart } from "@/components/ecommerce/cart-provider";
 
 export default function CheckoutPage() {
-  const { cartItems, subtotal, clearCart } = useCart()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isComplete, setIsComplete] = useState(false)
+  const { cartItems, subtotal, clearCart } = useCart();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isComplete, setIsComplete] = useState(false);
 
   if (cartItems.length === 0 && !isComplete) {
     return (
       <div className="container px-4 py-12 mx-auto text-center">
         <h1 className="text-2xl font-bold">Your cart is empty</h1>
-        <p className="mt-4">You need to add items to your cart before checking out.</p>
+        <p className="mt-4">
+          You need to add items to your cart before checking out.
+        </p>
         <Button asChild className="mt-6">
           <Link href="/products">Browse Products</Link>
         </Button>
       </div>
-    )
+    );
   }
 
   if (isComplete) {
@@ -43,10 +57,15 @@ export default function CheckoutPage() {
             <CardTitle className="text-2xl">Order Confirmed!</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>Thank you for your purchase. Your order has been confirmed and will be shipped soon.</p>
+            <p>
+              Thank you for your purchase. Your order has been confirmed and
+              will be shipped soon.
+            </p>
             <div className="bg-muted p-4 rounded-lg">
               <p className="font-medium">Order #12345</p>
-              <p className="text-sm text-muted-foreground">A confirmation email has been sent to your email address.</p>
+              <p className="text-sm text-muted-foreground">
+                A confirmation email has been sent to your email address.
+              </p>
             </div>
           </CardContent>
           <CardFooter className="flex justify-center">
@@ -56,20 +75,20 @@ export default function CheckoutPage() {
           </CardFooter>
         </Card>
       </div>
-    )
+    );
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate payment processing
     setTimeout(() => {
-      setIsSubmitting(false)
-      setIsComplete(true)
-      clearCart()
-    }, 2000)
-  }
+      setIsSubmitting(false);
+      setIsComplete(true);
+      clearCart();
+    }, 2000);
+  };
 
   return (
     <div className="container px-4 py-12 mx-auto">
@@ -89,7 +108,9 @@ export default function CheckoutPage() {
           <form onSubmit={handleSubmit}>
             <div className="space-y-8">
               <div>
-                <h2 className="text-lg font-medium mb-4">Contact Information</h2>
+                <h2 className="text-lg font-medium mb-4">
+                  Contact Information
+                </h2>
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -122,7 +143,9 @@ export default function CheckoutPage() {
                     <Input id="address" required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="apartment">Apartment, suite, etc. (optional)</Label>
+                    <Label htmlFor="apartment">
+                      Apartment, suite, etc. (optional)
+                    </Label>
                     <Input id="apartment" />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -170,7 +193,11 @@ export default function CheckoutPage() {
                     <div className="space-y-2">
                       <Label htmlFor="cardNumber">Card Number</Label>
                       <div className="relative">
-                        <Input id="cardNumber" placeholder="1234 5678 9012 3456" required />
+                        <Input
+                          id="cardNumber"
+                          placeholder="1234 5678 9012 3456"
+                          required
+                        />
                         <CreditCard className="absolute right-3 top-2.5 h-5 w-5 text-muted-foreground" />
                       </div>
                     </div>
@@ -187,7 +214,10 @@ export default function CheckoutPage() {
                   </TabsContent>
                   <TabsContent value="paypal" className="pt-4">
                     <div className="flex flex-col items-center justify-center py-8 text-center">
-                      <p className="mb-4">You will be redirected to PayPal to complete your purchase securely.</p>
+                      <p className="mb-4">
+                        You will be redirected to PayPal to complete your
+                        purchase securely.
+                      </p>
                       <Button type="button" className="w-full">
                         Continue with PayPal
                       </Button>
@@ -198,7 +228,8 @@ export default function CheckoutPage() {
                       <div className="bg-muted p-4 rounded-lg">
                         <h3 className="font-medium mb-2">Cash on Delivery</h3>
                         <p className="text-sm text-muted-foreground">
-                          Pay with cash when your order is delivered to your doorstep. A small COD fee may apply.
+                          Pay with cash when your order is delivered to your
+                          doorstep. A small COD fee may apply.
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -207,7 +238,9 @@ export default function CheckoutPage() {
                         </div>
                         <div className="text-sm">
                           <p className="font-medium">Secure and convenient</p>
-                          <p className="text-muted-foreground">No need to share payment details online</p>
+                          <p className="text-muted-foreground">
+                            No need to share payment details online
+                          </p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -215,8 +248,12 @@ export default function CheckoutPage() {
                           <CreditCard className="h-5 w-5 text-primary" />
                         </div>
                         <div className="text-sm">
-                          <p className="font-medium">Pay only when you receive</p>
-                          <p className="text-muted-foreground">Inspect your items before payment</p>
+                          <p className="font-medium">
+                            Pay only when you receive
+                          </p>
+                          <p className="text-muted-foreground">
+                            Inspect your items before payment
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -236,7 +273,9 @@ export default function CheckoutPage() {
                         <span>Standard Shipping</span>
                         <span>Free</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">Delivery in 5-7 business days</span>
+                      <span className="text-sm text-muted-foreground">
+                        Delivery in 5-7 business days
+                      </span>
                     </Label>
                   </div>
                   <div className="flex items-center space-x-3 space-y-0">
@@ -246,7 +285,9 @@ export default function CheckoutPage() {
                         <span>Express Shipping</span>
                         <span>$9.99</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">Delivery in 2-3 business days</span>
+                      <span className="text-sm text-muted-foreground">
+                        Delivery in 2-3 business days
+                      </span>
                     </Label>
                   </div>
                 </RadioGroup>
@@ -270,7 +311,7 @@ export default function CheckoutPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function OrderSummary({ cartItems, subtotal }) {
@@ -284,10 +325,14 @@ function OrderSummary({ cartItems, subtotal }) {
           {cartItems.map((item) => (
             <div key={item.id} className="flex justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium">{item.quantity || 1} ×</span>
+                <span className="text-sm font-medium">
+                  {item.quantity || 1} ×
+                </span>
                 <span className="text-sm">{item.name}</span>
               </div>
-              <span className="text-sm font-medium">${(item.price * (item.quantity || 1)).toFixed(2)}</span>
+              <span className="text-sm font-medium">
+                ${(item.price * (item.quantity || 1)).toFixed(2)}
+              </span>
             </div>
           ))}
         </div>
@@ -311,5 +356,5 @@ function OrderSummary({ cartItems, subtotal }) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

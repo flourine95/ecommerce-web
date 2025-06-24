@@ -1,28 +1,37 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { CheckCircle2 } from "lucide-react"
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { CheckCircle2 } from "lucide-react";
 
-const steps = ["Amount", "Card Details", "OTP Verification", "Confirmation"]
+const steps = ["Amount", "Card Details", "OTP Verification", "Confirmation"];
 
 export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [amount, setAmount] = useState("")
-  const [cardDetails, setCardDetails] = useState({ number: "", expiry: "", cvv: "" })
-  const [otp, setOtp] = useState("")
+  const [currentStep, setCurrentStep] = useState(0);
+  const [amount, setAmount] = useState("");
+  const [cardDetails, setCardDetails] = useState({
+    number: "",
+    expiry: "",
+    cvv: "",
+  });
+  const [otp, setOtp] = useState("");
 
   const handleContinue = () => {
     if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1)
+      setCurrentStep(currentStep + 1);
     } else {
-      onAddMoney(Number.parseFloat(amount))
-      onClose()
+      onAddMoney(Number.parseFloat(amount));
+      onClose();
     }
-  }
+  };
 
   const renderStepContent = () => {
     switch (currentStep) {
@@ -38,7 +47,7 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
               onChange={(e) => setAmount(e.target.value)}
             />
           </div>
-        )
+        );
       case 1:
         return (
           <div className="space-y-4">
@@ -48,7 +57,9 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
                 id="cardNumber"
                 placeholder="1234 5678 9012 3456"
                 value={cardDetails.number}
-                onChange={(e) => setCardDetails({ ...cardDetails, number: e.target.value })}
+                onChange={(e) =>
+                  setCardDetails({ ...cardDetails, number: e.target.value })
+                }
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -58,7 +69,9 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
                   id="expiry"
                   placeholder="MM/YY"
                   value={cardDetails.expiry}
-                  onChange={(e) => setCardDetails({ ...cardDetails, expiry: e.target.value })}
+                  onChange={(e) =>
+                    setCardDetails({ ...cardDetails, expiry: e.target.value })
+                  }
                 />
               </div>
               <div className="space-y-2">
@@ -67,29 +80,39 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
                   id="cvv"
                   placeholder="123"
                   value={cardDetails.cvv}
-                  onChange={(e) => setCardDetails({ ...cardDetails, cvv: e.target.value })}
+                  onChange={(e) =>
+                    setCardDetails({ ...cardDetails, cvv: e.target.value })
+                  }
                 />
               </div>
             </div>
           </div>
-        )
+        );
       case 2:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">Enter the OTP sent to your registered mobile number</p>
-            <Input placeholder="Enter OTP" value={otp} onChange={(e) => setOtp(e.target.value)} />
+            <p className="text-sm text-muted-foreground">
+              Enter the OTP sent to your registered mobile number
+            </p>
+            <Input
+              placeholder="Enter OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
           </div>
-        )
+        );
       case 3:
         return (
           <div className="text-center space-y-4">
             <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
             <p className="text-lg font-medium">Money Added Successfully</p>
-            <p className="text-sm text-muted-foreground">${amount} has been added to your Checking account.</p>
+            <p className="text-sm text-muted-foreground">
+              ${amount} has been added to your Checking account.
+            </p>
           </div>
-        )
+        );
     }
-  }
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -101,7 +124,10 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
           {renderStepContent()}
           <div className="flex justify-between">
             {currentStep > 0 && currentStep < steps.length - 1 && (
-              <Button variant="outline" onClick={() => setCurrentStep(currentStep - 1)}>
+              <Button
+                variant="outline"
+                onClick={() => setCurrentStep(currentStep - 1)}
+              >
                 Back
               </Button>
             )}
@@ -112,5 +138,5 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
