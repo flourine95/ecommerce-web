@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { DateRangePicker } from "@/components/ui/date-range-picker";
-import { OverviewTab } from "@/components/analytics/overview-tab";
-import { AnalyticsTab } from "@/components/analytics/analytics-tab";
-import { ReportsTab } from "@/components/analytics/reports-tab";
-import { NotificationsTab } from "@/components/analytics/notifications-tab";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { DateRangePicker } from '@/components/ui/date-range-picker';
+import { OverviewTab } from '@/components/dashboard/analytics/overview-tab';
+import { AnalyticsTab } from '@/components/dashboard/analytics/analytics-tab';
+import { ReportsTab } from '@/components/dashboard/analytics/reports-tab';
+import { NotificationsTab } from '@/components/dashboard/analytics/notifications-tab';
+import { Button } from '@/components/ui/button';
+import { Download } from 'lucide-react';
 
 export default function AnalyticsPage() {
   const handleExportData = () => {
     // Implement export functionality here
-    console.log("Exporting data...");
+    console.log('Exporting data...');
   };
 
   return (

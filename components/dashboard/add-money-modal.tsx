@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { CheckCircle2 } from "lucide-react";
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { CheckCircle2 } from 'lucide-react';
 
-const steps = ["Amount", "Card Details", "OTP Verification", "Confirmation"];
+const steps = ['Amount', 'Card Details', 'OTP Verification', 'Confirmation'];
 
 export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
   const [currentStep, setCurrentStep] = useState(0);
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState('');
   const [cardDetails, setCardDetails] = useState({
-    number: "",
-    expiry: "",
-    cvv: "",
+    number: '',
+    expiry: '',
+    cvv: '',
   });
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState('');
 
   const handleContinue = () => {
     if (currentStep < steps.length - 1) {
@@ -91,7 +91,7 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
       case 2:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Enter the OTP sent to your registered mobile number
             </p>
             <Input
@@ -103,10 +103,10 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
         );
       case 3:
         return (
-          <div className="text-center space-y-4">
+          <div className="space-y-4 text-center">
             <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
             <p className="text-lg font-medium">Money Added Successfully</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               ${amount} has been added to your Checking account.
             </p>
           </div>
@@ -132,7 +132,7 @@ export function AddMoneyModal({ isOpen, onClose, onAddMoney }) {
               </Button>
             )}
             <Button onClick={handleContinue} className="ml-auto">
-              {currentStep === steps.length - 1 ? "Close" : "Continue"}
+              {currentStep === steps.length - 1 ? 'Close' : 'Continue'}
             </Button>
           </div>
         </div>

@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { OverviewCards } from "@/components/analytics/overview-cards";
-import { RevenueChart } from "@/components/analytics/revenue-chart";
-import { RecentTransactions } from "@/components/analytics/recent-transactions";
-import { AccountGrowth } from "@/components/analytics/account-growth";
-import { TopProducts } from "@/components/analytics/top-products";
-import { UserActivity } from "@/components/analytics/user-activity";
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { OverviewCards } from '@/components/dashboard/analytics/overview-cards';
+import { RevenueChart } from '@/components/dashboard/analytics/revenue-chart';
+import { RecentTransactions } from '@/components/dashboard/analytics/recent-transactions';
+import { AccountGrowth } from '@/components/dashboard/analytics/account-growth';
+import { TopProducts } from '@/components/dashboard/analytics/top-products';
+import { UserActivity } from '@/components/dashboard/analytics/user-activity';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 
 export function OverviewTab() {
-  const [comparisonPeriod, setComparisonPeriod] = useState("previous_month");
+  const [comparisonPeriod, setComparisonPeriod] = useState('previous_month');
 
   return (
     <>
-      <div className="flex justify-between items-center mb-4">
+      <div className="mb-4 flex items-center justify-between">
         <h3 className="text-2xl font-semibold">Dashboard Overview</h3>
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium">Compare to:</span>
@@ -40,7 +40,7 @@ export function OverviewTab() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <OverviewCards comparisonPeriod={comparisonPeriod} />
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mt-4">
+      <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
           <CardHeader>
             <CardTitle className="text-xl font-semibold">Revenue</CardTitle>
@@ -60,7 +60,7 @@ export function OverviewTab() {
           </CardContent>
         </Card>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mt-4">
+      <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
           <CardHeader>
             <CardTitle className="text-xl font-semibold">
@@ -82,7 +82,7 @@ export function OverviewTab() {
           </CardContent>
         </Card>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mt-4">
+      <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
           <CardHeader>
             <CardTitle className="text-xl font-semibold">

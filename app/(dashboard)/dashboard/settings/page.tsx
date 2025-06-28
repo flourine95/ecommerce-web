@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useSettings } from "@/contexts/settings-context";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useSettings } from '@/contexts/settings-context';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Card,
   CardContent,
@@ -9,37 +9,37 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { Checkbox } from "@/components/ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Laptop, Smartphone, Tablet } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
+} from '@/components/ui/select';
+import { Slider } from '@/components/ui/slider';
+import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Laptop, Smartphone, Tablet } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
 const defaultAvatars = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9439775.jpg-4JVJWOjPksd3DtnBYJXoWHA5lc1DU9.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/375238645_11475210.jpg-lU8bOe6TLt5Rv51hgjg8NT8PsDBmvN.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/375238208_11475222.jpg-poEIzVHAGiIfMFQ7EiF8PUG1u0Zkzz.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dd.jpg-4MCwPC2Bec6Ume26Yo1kao3CnONxDg.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9334178.jpg-Y74tW6XFO68g7N36SE5MSNDNVKLQ08.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5295.jpg-fLw0wGGZp8wuTzU5dnyfjZDwAHN98a.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9720029.jpg-Yf9h2a3kT7rYyCb648iLIeHThq5wEy.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/27470341_7294795.jpg-XE0zf7R8tk4rfA1vm4fAHeZ1QoVEOo.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/799.jpg-0tEi4Xvg5YsFoGoQfQc698q4Dygl1S.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9334228.jpg-eOsHCkvVrVAwcPHKYSs5sQwVKsqWpC.jpeg",
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9439775.jpg-4JVJWOjPksd3DtnBYJXoWHA5lc1DU9.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/375238645_11475210.jpg-lU8bOe6TLt5Rv51hgjg8NT8PsDBmvN.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/375238208_11475222.jpg-poEIzVHAGiIfMFQ7EiF8PUG1u0Zkzz.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dd.jpg-4MCwPC2Bec6Ume26Yo1kao3CnONxDg.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9334178.jpg-Y74tW6XFO68g7N36SE5MSNDNVKLQ08.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5295.jpg-fLw0wGGZp8wuTzU5dnyfjZDwAHN98a.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9720029.jpg-Yf9h2a3kT7rYyCb648iLIeHThq5wEy.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/27470341_7294795.jpg-XE0zf7R8tk4rfA1vm4fAHeZ1QoVEOo.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/799.jpg-0tEi4Xvg5YsFoGoQfQc698q4Dygl1S.jpeg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9334228.jpg-eOsHCkvVrVAwcPHKYSs5sQwVKsqWpC.jpeg',
 ];
 
 export default function SettingsPage() {
@@ -59,22 +59,22 @@ export default function SettingsPage() {
       phone: settings.phone,
       timezone: settings.timezone,
     });
-    toast.success("Account settings saved successfully");
+    toast.success('Account settings saved successfully');
   };
 
   const handleSaveNotifications = () => {
     updateNotificationSettings(settings.notifications);
-    toast.success("Notification settings saved successfully");
+    toast.success('Notification settings saved successfully');
   };
 
   const handleSavePrivacy = () => {
     updatePrivacySettings(settings.privacy);
-    toast.success("Privacy settings saved successfully");
+    toast.success('Privacy settings saved successfully');
   };
 
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold mb-6">Settings</h1>
+      <h1 className="mb-6 text-3xl font-bold">Settings</h1>
       <Tabs defaultValue="account" className="space-y-4">
         <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="account">Account</TabsTrigger>
@@ -98,9 +98,9 @@ export default function SettingsPage() {
                     <AvatarImage src={selectedAvatar} alt={settings.fullName} />
                     <AvatarFallback>
                       {settings.fullName
-                        .split(" ")
+                        .split(' ')
                         .map((n) => n[0])
-                        .join("")}
+                        .join('')}
                     </AvatarFallback>
                   </Avatar>
                 </div>
@@ -109,8 +109,8 @@ export default function SettingsPage() {
                   {defaultAvatars.map((avatar, index) => (
                     <Avatar
                       key={index}
-                      className={`h-20 w-20 rounded-lg cursor-pointer hover:ring-2 hover:ring-primary shrink-0 ${
-                        selectedAvatar === avatar ? "ring-2 ring-primary" : ""
+                      className={`hover:ring-primary h-20 w-20 shrink-0 cursor-pointer rounded-lg hover:ring-2 ${
+                        selectedAvatar === avatar ? 'ring-primary ring-2' : ''
                       }`}
                       onClick={() => setSelectedAvatar(avatar)}
                     >
@@ -251,7 +251,7 @@ export default function SettingsPage() {
               <CardHeader>
                 <CardTitle>Security Settings</CardTitle>
                 <CardDescription>
-                  Manage your account's security settings
+                  {"Manage your account's security settings"}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -289,27 +289,27 @@ export default function SettingsPage() {
               <CardContent className="space-y-4">
                 {[
                   {
-                    date: "2023-07-20",
-                    time: "14:30 UTC",
-                    ip: "192.168.1.1",
-                    location: "New York, USA",
+                    date: '2023-07-20',
+                    time: '14:30 UTC',
+                    ip: '192.168.1.1',
+                    location: 'New York, USA',
                   },
                   {
-                    date: "2023-07-19",
-                    time: "09:15 UTC",
-                    ip: "10.0.0.1",
-                    location: "London, UK",
+                    date: '2023-07-19',
+                    time: '09:15 UTC',
+                    ip: '10.0.0.1',
+                    location: 'London, UK',
                   },
                   {
-                    date: "2023-07-18",
-                    time: "22:45 UTC",
-                    ip: "172.16.0.1",
-                    location: "Tokyo, Japan",
+                    date: '2023-07-18',
+                    time: '22:45 UTC',
+                    ip: '172.16.0.1',
+                    location: 'Tokyo, Japan',
                   },
                 ].map((login, index) => (
                   <div
                     key={index}
-                    className="flex justify-between items-center text-sm"
+                    className="flex items-center justify-between text-sm"
                   >
                     <span>
                       {login.date} {login.time}
@@ -331,21 +331,21 @@ export default function SettingsPage() {
               <CardContent className="space-y-4">
                 {[
                   {
-                    device: "Laptop",
-                    browser: "Chrome",
-                    os: "Windows 10",
+                    device: 'Laptop',
+                    browser: 'Chrome',
+                    os: 'Windows 10',
                     icon: Laptop,
                   },
                   {
-                    device: "Smartphone",
-                    browser: "Safari",
-                    os: "iOS 15",
+                    device: 'Smartphone',
+                    browser: 'Safari',
+                    os: 'iOS 15',
                     icon: Smartphone,
                   },
                   {
-                    device: "Tablet",
-                    browser: "Firefox",
-                    os: "Android 12",
+                    device: 'Tablet',
+                    browser: 'Firefox',
+                    os: 'Android 12',
                     icon: Tablet,
                   },
                 ].map((session, index) => (
@@ -728,7 +728,7 @@ export default function SettingsPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-2">
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       Connected: Google Analytics, Facebook Pixel
                     </p>
                     <Button variant="outline">Manage Integrations</Button>

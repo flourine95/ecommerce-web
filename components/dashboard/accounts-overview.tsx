@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Wallet, Plus, Send, CreditCard, MoreHorizontal } from "lucide-react";
-import { AddMoneyModal } from "./add-money-modal";
-import { SendMoneyModal } from "./send-money-modal";
-import { RequestMoneyModal } from "./request-money-modal";
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Wallet, Plus, Send, CreditCard, MoreHorizontal } from 'lucide-react';
+import { AddMoneyModal } from './add-money-modal';
+import { SendMoneyModal } from './send-money-modal';
+import { RequestMoneyModal } from './request-money-modal';
 
 const initialAccounts = [
-  { name: "Checking", balance: 7500 },
-  { name: "Savings", balance: 560000 },
-  { name: "Investment", balance: 5879000 },
+  { name: 'Checking', balance: 7500 },
+  { name: 'Savings', balance: 560000 },
+  { name: 'Investment', balance: 5879000 },
 ];
 
 export function AccountsOverview() {
@@ -28,7 +28,7 @@ export function AccountsOverview() {
   const handleAddMoney = (amount) => {
     setAccounts(
       accounts.map((account) =>
-        account.name === "Checking"
+        account.name === 'Checking'
           ? { ...account, balance: account.balance + amount }
           : account,
       ),
@@ -53,22 +53,22 @@ export function AccountsOverview() {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">Accounts Overview</CardTitle>
-        <Wallet className="h-4 w-4 text-muted-foreground" />
+        <Wallet className="text-muted-foreground h-4 w-4" />
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">
           ${totalBalance.toLocaleString()}
         </div>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           Total balance across all accounts
         </p>
         <div className="mt-4 space-y-2">
           {accounts.map((account) => (
             <div
               key={account.name}
-              className="flex justify-between items-center"
+              className="flex items-center justify-between"
             >
-              <span className="text-sm text-muted-foreground">
+              <span className="text-muted-foreground text-sm">
                 {account.name}
               </span>
               <span className="text-sm font-medium">

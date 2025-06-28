@@ -1,17 +1,17 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
   return (
     <div className="relative">
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
       <div
-        className="relative h-[70vh] flex items-center justify-start bg-cover bg-center"
+        className="relative flex h-[70vh] items-center justify-start bg-cover bg-center"
         style={{
           backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
         }}
       >
-        <div className="container px-4 mx-auto">
+        <div className="container mx-auto px-4">
           <div className="max-w-lg space-y-6 text-white">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               New Season Collection
@@ -32,7 +32,7 @@ export function HeroSection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="text-white border-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10"
               >
                 <Link href="/products/new">New Arrivals</Link>
               </Button>

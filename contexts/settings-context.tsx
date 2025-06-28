@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from 'react';
 
 export interface UserSettings {
   avatar: string;
@@ -12,8 +12,8 @@ export interface UserSettings {
   currency: string;
   dateFormat: string;
   fontSize: number;
-  theme: "light" | "dark" | "system";
-  layout: "default" | "compact" | "expanded";
+  theme: 'light' | 'dark' | 'system';
+  layout: 'default' | 'compact' | 'expanded';
   notifications: {
     email: boolean;
     push: boolean;
@@ -21,31 +21,31 @@ export interface UserSettings {
     accountActivity: boolean;
     newFeatures: boolean;
     marketing: boolean;
-    frequency: "real-time" | "daily" | "weekly";
+    frequency: 'real-time' | 'daily' | 'weekly';
     quietHoursStart: string;
     quietHoursEnd: string;
   };
   privacy: {
     analyticsSharing: boolean;
     personalizedAds: boolean;
-    visibility: "public" | "private";
-    dataRetention: "6-months" | "1-year" | "2-years" | "indefinite";
+    visibility: 'public' | 'private';
+    dataRetention: '6-months' | '1-year' | '2-years' | 'indefinite';
   };
 }
 
 const defaultSettings: UserSettings = {
   avatar:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/38184074.jpg-M4vCjTSSWVw5RwWvvmrxXBcNVU8MBU.jpeg",
-  fullName: "Dollar Singh",
-  email: "dollar.singh@example.com",
-  phone: "+1 (555) 123-4567",
-  timezone: "utc-8",
-  language: "en",
-  currency: "usd",
-  dateFormat: "mm-dd-yyyy",
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/38184074.jpg-M4vCjTSSWVw5RwWvvmrxXBcNVU8MBU.jpeg',
+  fullName: 'Dollar Singh',
+  email: 'dollar.singh@example.com',
+  phone: '+1 (555) 123-4567',
+  timezone: 'utc-8',
+  language: 'en',
+  currency: 'usd',
+  dateFormat: 'mm-dd-yyyy',
   fontSize: 16,
-  theme: "system",
-  layout: "default",
+  theme: 'system',
+  layout: 'default',
   notifications: {
     email: true,
     push: true,
@@ -53,15 +53,15 @@ const defaultSettings: UserSettings = {
     accountActivity: true,
     newFeatures: true,
     marketing: false,
-    frequency: "real-time",
-    quietHoursStart: "22:00",
-    quietHoursEnd: "07:00",
+    frequency: 'real-time',
+    quietHoursStart: '22:00',
+    quietHoursEnd: '07:00',
   },
   privacy: {
     analyticsSharing: true,
     personalizedAds: false,
-    visibility: "public",
-    dataRetention: "1-year",
+    visibility: 'public',
+    dataRetention: '1-year',
   },
 };
 
@@ -69,9 +69,9 @@ interface SettingsContextType {
   settings: UserSettings;
   updateSettings: (newSettings: Partial<UserSettings>) => void;
   updateNotificationSettings: (
-    settings: Partial<UserSettings["notifications"]>,
+    settings: Partial<UserSettings['notifications']>,
   ) => void;
-  updatePrivacySettings: (settings: Partial<UserSettings["privacy"]>) => void;
+  updatePrivacySettings: (settings: Partial<UserSettings['privacy']>) => void;
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(
@@ -81,8 +81,8 @@ const SettingsContext = createContext<SettingsContextType | undefined>(
 export function SettingsProvider({ children }: { children: React.ReactNode }) {
   const [settings, setSettings] = useState<UserSettings>(() => {
     // Try to load settings from localStorage during initialization
-    if (typeof window !== "undefined") {
-      const savedSettings = localStorage.getItem("userSettings");
+    if (typeof window !== 'undefined') {
+      const savedSettings = localStorage.getItem('userSettings');
       if (savedSettings) {
         return JSON.parse(savedSettings);
       }
@@ -92,7 +92,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
 
   // Save settings to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem("userSettings", JSON.stringify(settings));
+    localStorage.setItem('userSettings', JSON.stringify(settings));
   }, [settings]);
 
   const updateSettings = (newSettings: Partial<UserSettings>) => {
@@ -100,7 +100,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
   };
 
   const updateNotificationSettings = (
-    notificationSettings: Partial<UserSettings["notifications"]>,
+    notificationSettings: Partial<UserSettings['notifications']>,
   ) => {
     setSettings((prev) => ({
       ...prev,
@@ -109,7 +109,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
   };
 
   const updatePrivacySettings = (
-    privacySettings: Partial<UserSettings["privacy"]>,
+    privacySettings: Partial<UserSettings['privacy']>,
   ) => {
     setSettings((prev) => ({
       ...prev,
@@ -134,7 +134,7 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
 export function useSettings() {
   const context = useContext(SettingsContext);
   if (context === undefined) {
-    throw new Error("useSettings must be used within a SettingsProvider");
+    throw new Error('useSettings must be used within a SettingsProvider');
   }
   return context;
 }

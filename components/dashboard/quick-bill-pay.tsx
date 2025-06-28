@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { PaymentModal } from "./payment-modal";
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { PaymentModal } from './payment-modal';
 
 const initialBills = [
-  { id: 1, name: "Electricity Bill", amount: 85, dueDate: "2023-07-15" },
-  { id: 2, name: "Internet Service", amount: 60, dueDate: "2023-07-18" },
-  { id: 3, name: "Credit Card Payment", amount: 500, dueDate: "2023-07-25" },
-  { id: 4, name: "Water Bill", amount: 45, dueDate: "2023-07-30" },
+  { id: 1, name: 'Electricity Bill', amount: 85, dueDate: '2023-07-15' },
+  { id: 2, name: 'Internet Service', amount: 60, dueDate: '2023-07-18' },
+  { id: 3, name: 'Credit Card Payment', amount: 500, dueDate: '2023-07-25' },
+  { id: 4, name: 'Water Bill', amount: 45, dueDate: '2023-07-30' },
 ];
 
 export function QuickBillPay() {
@@ -33,7 +33,7 @@ export function QuickBillPay() {
               <div key={bill.id} className="flex items-center justify-between">
                 <div>
                   <p className="font-medium">{bill.name}</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground text-sm">
                     Due: {bill.dueDate}
                   </p>
                 </div>
@@ -51,7 +51,7 @@ export function QuickBillPay() {
             ))}
           </div>
         ) : (
-          <p className="text-center text-muted-foreground">No pending bills</p>
+          <p className="text-muted-foreground text-center">No pending bills</p>
         )}
       </CardContent>
       {selectedBill && (

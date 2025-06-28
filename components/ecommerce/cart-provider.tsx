@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import type React from "react";
+import type React from 'react';
 
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from 'react';
 
 type Product = {
   id: number;
@@ -31,12 +31,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart from localStorage on client side
   useEffect(() => {
-    const savedCart = localStorage.getItem("cart");
+    const savedCart = localStorage.getItem('cart');
     if (savedCart) {
       try {
         setCartItems(JSON.parse(savedCart));
       } catch (error) {
-        console.error("Failed to parse cart from localStorage:", error);
+        console.error('Failed to parse cart from localStorage:', error);
       }
     }
   }, []);
@@ -44,7 +44,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     if (cartItems.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cartItems));
+      localStorage.setItem('cart', JSON.stringify(cartItems));
     }
   }, [cartItems]);
 
@@ -71,7 +71,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
     // If cart is empty after removal, clear localStorage
     if (cartItems.length === 1) {
-      localStorage.removeItem("cart");
+      localStorage.removeItem('cart');
     }
   };
 
@@ -87,7 +87,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const clearCart = () => {
     setCartItems([]);
-    localStorage.removeItem("cart");
+    localStorage.removeItem('cart');
   };
 
   const totalItems = cartItems.reduce(
@@ -120,7 +120,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 export function useCart() {
   const context = useContext(CartContext);
   if (context === undefined) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error('useCart must be used within a CartProvider');
   }
   return context;
 }

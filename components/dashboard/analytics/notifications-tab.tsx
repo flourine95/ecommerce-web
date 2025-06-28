@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Switch } from '@/components/ui/switch';
 import {
   Bell,
   AlertTriangle,
@@ -11,15 +11,15 @@ import {
   TrendingDown,
   DollarSign,
   Users,
-} from "lucide-react";
+} from 'lucide-react';
 
 const notificationTypes = [
-  { id: "account", label: "Account Activity", icon: Bell },
-  { id: "security", label: "Security Alerts", icon: AlertTriangle },
-  { id: "performance", label: "Performance Updates", icon: TrendingUp },
-  { id: "market", label: "Market Trends", icon: TrendingDown },
-  { id: "financial", label: "Financial Reports", icon: DollarSign },
-  { id: "user", label: "User Behavior", icon: Users },
+  { id: 'account', label: 'Account Activity', icon: Bell },
+  { id: 'security', label: 'Security Alerts', icon: AlertTriangle },
+  { id: 'performance', label: 'Performance Updates', icon: TrendingUp },
+  { id: 'market', label: 'Market Trends', icon: TrendingDown },
+  { id: 'financial', label: 'Financial Reports', icon: DollarSign },
+  { id: 'user', label: 'User Behavior', icon: Users },
 ];
 
 export function NotificationsTab() {
@@ -48,7 +48,7 @@ export function NotificationsTab() {
           {notificationTypes.map((type) => (
             <div key={type.id} className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <type.icon className="h-5 w-5 text-muted-foreground" />
+                <type.icon className="text-muted-foreground h-5 w-5" />
                 <span className="text-sm font-medium">{type.label}</span>
               </div>
               <Switch
@@ -72,7 +72,7 @@ export function NotificationsTab() {
               <p className="text-sm font-medium">
                 Unusual account activity detected
               </p>
-              <p className="text-xs text-muted-foreground">2 hours ago</p>
+              <p className="text-muted-foreground text-xs">2 hours ago</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -81,7 +81,7 @@ export function NotificationsTab() {
               <p className="text-sm font-medium">
                 Your portfolio has grown by 5% this week
               </p>
-              <p className="text-xs text-muted-foreground">1 day ago</p>
+              <p className="text-muted-foreground text-xs">1 day ago</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -90,7 +90,7 @@ export function NotificationsTab() {
               <p className="text-sm font-medium">
                 New feature: Advanced analytics now available
               </p>
-              <p className="text-xs text-muted-foreground">3 days ago</p>
+              <p className="text-muted-foreground text-xs">3 days ago</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -99,7 +99,7 @@ export function NotificationsTab() {
               <p className="text-sm font-medium">
                 Monthly financial report is ready for review
               </p>
-              <p className="text-xs text-muted-foreground">5 days ago</p>
+              <p className="text-muted-foreground text-xs">5 days ago</p>
             </div>
           </div>
         </CardContent>

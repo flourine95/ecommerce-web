@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { PlusCircle, SendHorizontal, CreditCard } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { PlusCircle, SendHorizontal, CreditCard } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -10,9 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 function ActionDialog({
   title,
@@ -27,11 +27,11 @@ function ActionDialog({
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline" className="w-full justify-start">
-          {title === "Add Funds" && <PlusCircle className="mr-2 h-4 w-4" />}
-          {title === "Send Money" && (
+          {title === 'Add Funds' && <PlusCircle className="mr-2 h-4 w-4" />}
+          {title === 'Send Money' && (
             <SendHorizontal className="mr-2 h-4 w-4" />
           )}
-          {title === "Top Up" && <CreditCard className="mr-2 h-4 w-4" />}
+          {title === 'Top Up' && <CreditCard className="mr-2 h-4 w-4" />}
           {title}
         </Button>
       </DialogTrigger>
@@ -61,7 +61,7 @@ function ActionDialog({
 
 export function QuickActions() {
   return (
-    <Card className="border border-border">
+    <Card className="border-border border">
       <CardHeader>
         <CardTitle className="text-lg font-medium">Quick Actions</CardTitle>
       </CardHeader>

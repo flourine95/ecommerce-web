@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { ChevronLeft, CreditCard, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import Link from 'next/link';
+import { ChevronLeft, CreditCard, ShieldCheck } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useCart } from "@/components/ecommerce/cart-provider";
+} from '@/components/ui/select';
+import { Separator } from '@/components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useCart } from '@/components/ecommerce/cart-provider';
 
 export default function CheckoutPage() {
   const { cartItems, subtotal, clearCart } = useCart();
@@ -32,7 +32,7 @@ export default function CheckoutPage() {
 
   if (cartItems.length === 0 && !isComplete) {
     return (
-      <div className="container px-4 py-12 mx-auto text-center">
+      <div className="container mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-bold">Your cart is empty</h1>
         <p className="mt-4">
           You need to add items to your cart before checking out.
@@ -46,10 +46,10 @@ export default function CheckoutPage() {
 
   if (isComplete) {
     return (
-      <div className="container px-4 py-12 mx-auto max-w-md">
+      <div className="container mx-auto max-w-md px-4 py-12">
         <Card className="text-center">
           <CardHeader>
-            <div className="flex justify-center mb-4">
+            <div className="mb-4 flex justify-center">
               <div className="rounded-full bg-green-100 p-3">
                 <ShieldCheck className="h-8 w-8 text-green-600" />
               </div>
@@ -61,9 +61,9 @@ export default function CheckoutPage() {
               Thank you for your purchase. Your order has been confirmed and
               will be shipped soon.
             </p>
-            <div className="bg-muted p-4 rounded-lg">
+            <div className="bg-muted rounded-lg p-4">
               <p className="font-medium">Order #12345</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 A confirmation email has been sent to your email address.
               </p>
             </div>
@@ -91,28 +91,28 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="container px-4 py-12 mx-auto">
-      <div className="flex items-center mb-8">
+    <div className="container mx-auto px-4 py-12">
+      <div className="mb-8 flex items-center">
         <Button variant="ghost" size="sm" asChild>
           <Link href="/cart">
-            <ChevronLeft className="h-4 w-4 mr-1" />
+            <ChevronLeft className="mr-1 h-4 w-4" />
             Back to Cart
           </Link>
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <h1 className="text-2xl font-bold mb-6">Checkout</h1>
+          <h1 className="mb-6 text-2xl font-bold">Checkout</h1>
 
           <form onSubmit={handleSubmit}>
             <div className="space-y-8">
               <div>
-                <h2 className="text-lg font-medium mb-4">
+                <h2 className="mb-4 text-lg font-medium">
                   Contact Information
                 </h2>
                 <div className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
                       <Input id="firstName" required />
@@ -136,7 +136,7 @@ export default function CheckoutPage() {
               <Separator />
 
               <div>
-                <h2 className="text-lg font-medium mb-4">Shipping Address</h2>
+                <h2 className="mb-4 text-lg font-medium">Shipping Address</h2>
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="address">Address</Label>
@@ -148,7 +148,7 @@ export default function CheckoutPage() {
                     </Label>
                     <Input id="apartment" />
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                     <div className="space-y-2">
                       <Label htmlFor="city">City</Label>
                       <Input id="city" required />
@@ -178,7 +178,7 @@ export default function CheckoutPage() {
               <Separator />
 
               <div>
-                <h2 className="text-lg font-medium mb-4">Payment Method</h2>
+                <h2 className="mb-4 text-lg font-medium">Payment Method</h2>
                 <Tabs defaultValue="card">
                   <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="card">Credit Card</TabsTrigger>
@@ -198,7 +198,7 @@ export default function CheckoutPage() {
                           placeholder="1234 5678 9012 3456"
                           required
                         />
-                        <CreditCard className="absolute right-3 top-2.5 h-5 w-5 text-muted-foreground" />
+                        <CreditCard className="text-muted-foreground absolute top-2.5 right-3 h-5 w-5" />
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -225,16 +225,16 @@ export default function CheckoutPage() {
                   </TabsContent>
                   <TabsContent value="cod" className="pt-4">
                     <div className="flex flex-col space-y-4">
-                      <div className="bg-muted p-4 rounded-lg">
-                        <h3 className="font-medium mb-2">Cash on Delivery</h3>
-                        <p className="text-sm text-muted-foreground">
+                      <div className="bg-muted rounded-lg p-4">
+                        <h3 className="mb-2 font-medium">Cash on Delivery</h3>
+                        <p className="text-muted-foreground text-sm">
                           Pay with cash when your order is delivered to your
                           doorstep. A small COD fee may apply.
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <ShieldCheck className="h-5 w-5 text-primary" />
+                        <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-full">
+                          <ShieldCheck className="text-primary h-5 w-5" />
                         </div>
                         <div className="text-sm">
                           <p className="font-medium">Secure and convenient</p>
@@ -244,8 +244,8 @@ export default function CheckoutPage() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <CreditCard className="h-5 w-5 text-primary" />
+                        <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-full">
+                          <CreditCard className="text-primary h-5 w-5" />
                         </div>
                         <div className="text-sm">
                           <p className="font-medium">
@@ -264,28 +264,28 @@ export default function CheckoutPage() {
               <Separator />
 
               <div>
-                <h2 className="text-lg font-medium mb-4">Shipping Method</h2>
+                <h2 className="mb-4 text-lg font-medium">Shipping Method</h2>
                 <RadioGroup defaultValue="standard" className="space-y-3">
-                  <div className="flex items-center space-x-3 space-y-0">
+                  <div className="flex items-center space-y-0 space-x-3">
                     <RadioGroupItem value="standard" id="standard" />
                     <Label htmlFor="standard" className="flex-1">
                       <div className="flex justify-between">
                         <span>Standard Shipping</span>
                         <span>Free</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-muted-foreground text-sm">
                         Delivery in 5-7 business days
                       </span>
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-3 space-y-0">
+                  <div className="flex items-center space-y-0 space-x-3">
                     <RadioGroupItem value="express" id="express" />
                     <Label htmlFor="express" className="flex-1">
                       <div className="flex justify-between">
                         <span>Express Shipping</span>
                         <span>$9.99</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-muted-foreground text-sm">
                         Delivery in 2-3 business days
                       </span>
                     </Label>
@@ -299,7 +299,7 @@ export default function CheckoutPage() {
 
               <div className="flex justify-end">
                 <Button type="submit" size="lg" disabled={isSubmitting}>
-                  {isSubmitting ? "Processing..." : "Place Order"}
+                  {isSubmitting ? 'Processing...' : 'Place Order'}
                 </Button>
               </div>
             </div>

@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { CheckCircle2 } from "lucide-react";
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { CheckCircle2 } from 'lucide-react';
 
 const steps = [
-  "Payment Option",
-  "Card Details",
-  "OTP Verification",
-  "Confirmation",
+  'Payment Option',
+  'Card Details',
+  'OTP Verification',
+  'Confirmation',
 ];
 
 export function PaymentModal({ bill, isOpen, onClose, onPaymentSuccess }) {
   const [currentStep, setCurrentStep] = useState(0);
-  const [paymentOption, setPaymentOption] = useState("full");
+  const [paymentOption, setPaymentOption] = useState('full');
   const [cardDetails, setCardDetails] = useState({
-    number: "",
-    expiry: "",
-    cvv: "",
+    number: '',
+    expiry: '',
+    cvv: '',
   });
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState('');
 
   const handleContinue = () => {
     if (currentStep < steps.length - 1) {
@@ -101,7 +101,7 @@ export function PaymentModal({ bill, isOpen, onClose, onPaymentSuccess }) {
       case 2:
         return (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Enter the OTP sent to your registered mobile number
             </p>
             <Input
@@ -113,10 +113,10 @@ export function PaymentModal({ bill, isOpen, onClose, onPaymentSuccess }) {
         );
       case 3:
         return (
-          <div className="text-center space-y-4">
+          <div className="space-y-4 text-center">
             <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
             <p className="text-lg font-medium">Payment Successful</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Your payment of ${bill.amount} for {bill.name} has been processed
               successfully.
             </p>
@@ -143,7 +143,7 @@ export function PaymentModal({ bill, isOpen, onClose, onPaymentSuccess }) {
               </Button>
             )}
             <Button onClick={handleContinue} className="ml-auto">
-              {currentStep === steps.length - 1 ? "Close" : "Continue"}
+              {currentStep === steps.length - 1 ? 'Close' : 'Continue'}
             </Button>
           </div>
         </div>

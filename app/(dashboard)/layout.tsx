@@ -1,18 +1,18 @@
-import "@/app/globals.css";
-import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/layout/theme-provider";
-import { Sidebar } from "@/components/layout/sidebar";
-import { TopNav } from "@/components/layout/top-nav";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { SettingsProvider } from "@/contexts/settings-context";
-import type React from "react";
+import '@/app/globals.css';
+import { Inter } from 'next/font/google';
+import { ThemeProvider } from '@/components/layout/theme-provider';
+import { Sidebar } from '@/components/layout/sidebar';
+import { TopNav } from '@/components/layout/top-nav';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { SettingsProvider } from '@/contexts/settings-context';
+import type React from 'react';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Flowers&Saints Dashboard",
-  description: "A modern, responsive financial dashboard",
-  generator: "v0.dev",
+  title: 'Flowers&Saints Dashboard',
+  description: 'A modern, responsive financial dashboard',
+  generator: 'v0.dev',
 };
 
 export default function RootLayout({
@@ -26,11 +26,11 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SettingsProvider>
             <TooltipProvider delayDuration={0}>
-              <div className="min-h-screen flex">
+              <div className="flex min-h-screen">
                 <Sidebar />
                 <div className="flex-1">
                   <TopNav />
-                  <div className="container mx-auto p-6 max-w-7xl">
+                  <div className="container mx-auto max-w-7xl p-6">
                     <main className="w-full">{children}</main>
                   </div>
                 </div>

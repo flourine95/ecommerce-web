@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ShoppingCart } from "lucide-react";
-import { useCart } from "@/components/ecommerce/cart-provider";
+import Link from 'next/link';
+import Image from 'next/image';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ShoppingCart } from 'lucide-react';
+import { useCart } from '@/components/ecommerce/cart-provider';
 
 type Product = {
   id: number;
@@ -19,7 +19,7 @@ type Product = {
 
 export function ProductGrid({ products }: { products: Product[] }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
@@ -31,11 +31,11 @@ function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart();
 
   return (
-    <Card className="overflow-hidden group">
+    <Card className="group overflow-hidden">
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-square overflow-hidden">
           <Image
-            src={product.image || "/placeholder.svg"}
+            src={product.image || '/placeholder.svg'}
             alt={product.name}
             fill
             className="object-cover transition-transform group-hover:scale-105"
@@ -49,11 +49,11 @@ function ProductCard({ product }: { product: Product }) {
         <Link href={`/products/${product.id}`} className="hover:underline">
           <h3 className="font-medium">{product.name}</h3>
         </Link>
-        <p className="font-bold mt-1">${product.price.toFixed(2)}</p>
+        <p className="mt-1 font-bold">${product.price.toFixed(2)}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button className="w-full" size="sm" onClick={() => addToCart(product)}>
-          <ShoppingCart className="h-4 w-4 mr-2" />
+          <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
         </Button>
       </CardFooter>

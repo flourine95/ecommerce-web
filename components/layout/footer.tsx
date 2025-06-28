@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import Link from 'next/link';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container px-4 py-12 mx-auto">
+    <footer className="bg-background border-t">
+      <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <h3 className="text-lg font-bold">StyleHub</h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               Premium clothing for every occasion. Quality materials, timeless
               designs.
             </p>
@@ -44,7 +44,7 @@ export function Footer() {
                   href="/products/men"
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Men's Collection
+                  {"Men's Collection"}
                 </Link>
               </li>
               <li>
@@ -52,7 +52,7 @@ export function Footer() {
                   href="/products/women"
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Women's Collection
+                  {"Women's Collection"}
                 </Link>
               </li>
               <li>
@@ -148,11 +148,11 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between gap-4 border-t pt-8 mt-8 md:flex-row">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row">
+          <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} StyleHub. All rights reserved.
           </p>
-          <div className="flex gap-4 text-xs text-muted-foreground">
+          <div className="text-muted-foreground flex gap-4 text-xs">
             <Link href="/privacy" className="hover:text-foreground">
               Privacy Policy
             </Link>
