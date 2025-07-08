@@ -1,0 +1,102 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "products": "Alle Produkte",
+    "men": "Herren",
+    "women": "Damen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "profile": "Profil",
+    "cart": "Warenkorb"
+  },
+  "actions": {
+    "search": "Suchen",
+    "account": "Konto",
+    "toggleMenu": "Menü umschalten",
+    "closeSearch": "Suche schließen",
+    "language": "Sprache",
+    "theme": "Thema"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "placeholders": {
+    "searchPlaceholder": "Produkte suchen..."
+  },
+  "languages": {
+    "vi": "Vietnamesisch",
+    "en": "Englisch",
+    "zh": "Chinesisch",
+    "fr": "Französisch",
+    "de": "Deutsch",
+    "ja": "Japanisch"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "faq": "FAQ",
+    "title": "Clothify",
+    "description": "Premium-Bekleidung für jeden Anlass. Hochwertige Materialien, zeitlose Designs.",
+    "shop": "Shop",
+    "company": "Unternehmen",
+    "customerService": "Kundendienst",
+    "copyright": "© {year} Clothify. Alle Rechte vorbehalten.",
+    "menCollection": "Herren Kollektion",
+    "womenCollection": "Damen Kollektion",
+    "newArrivals": "Neuheiten",
+    "sale": "Angebote",
+    "aboutUs": "Über uns",
+    "careers": "Karriere",
+    "storeLocator": "Filialsuche",
+    "helpCenter": "Hilfezentrum",
+    "shippingReturns": "Versand & Rückgabe",
+    "sizeGuide": "Größentabelle",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsService": "Nutzungsbedingungen",
+    "cookiePolicy": "Cookie-Richtlinie"
+  },
+  "products": {
+    "title": "Produkte",
+    "foundProducts": "{count} Produkte gefunden",
+    "noProducts": "Keine Produkte gefunden",
+    "noProductsDescription": "Versuche, die Filter anzupassen oder mit anderen Suchbegriffen zu suchen",
+    "badges": {
+      "new": "Neu",
+      "sale": "Angebot",
+      "featured": "Empfohlen"
+    },
+    "actions": {
+      "addToCart": "In den Warenkorb",
+      "retry": "Erneut versuchen",
+      "clearFilters": "Filter löschen"
+    },
+    "errors": {
+      "loadFailed": "Produkte konnten nicht geladen werden"
+    },
+    "sorting": {
+      "placeholder": "Sortieren nach"
+    }
+  },
+  "filters": {
+    "title": "Filter",
+    "description": "Produkte nach Kriterien filtern",
+    "clearAll": "Alle löschen",
+    "applied": "Angewendet",
+    "search": "Suche",
+    "searchPlaceholder": "Suchbegriff eingeben...",
+    "categories": "Kategorien",
+    "sizes": "Größen",
+    "colors": "Farben",
+    "color": "Farbe",
+    "size": "Größe",
+    "priceRange": "Preisspanne",
+    "featuredOnly": "Nur empfohlene Produkte"
+  },
+  "pagination": {
+    "previous": "Zurück",
+    "next": "Weiter",
+    "showing": "Zeige {from}-{to} von {total}",
+    "pageInfo": "Seite {current} / {total}"
+  }
+}

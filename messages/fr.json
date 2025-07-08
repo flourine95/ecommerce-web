@@ -1,0 +1,102 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "products": "Tous les produits",
+    "men": "Hommes",
+    "women": "Femmes",
+    "about": "À propos",
+    "contact": "Contact",
+    "profile": "Profil",
+    "cart": "Panier"
+  },
+  "actions": {
+    "search": "Rechercher",
+    "account": "Compte",
+    "toggleMenu": "Basculer le menu",
+    "closeSearch": "Fermer la recherche",
+    "language": "Langue",
+    "theme": "Thème"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système"
+  },
+  "placeholders": {
+    "searchPlaceholder": "Rechercher des produits..."
+  },
+  "languages": {
+    "vi": "Vietnamien",
+    "en": "Anglais",
+    "zh": "Chinois",
+    "fr": "Français",
+    "de": "Allemand",
+    "ja": "Japonais"
+  },
+  "footer": {
+    "about": "À propos",
+    "contact": "Contact",
+    "title": "Clothify",
+    "description": "Vêtements haut de gamme pour toutes les occasions. Matériaux de qualité, designs intemporels.",
+    "shop": "Boutique",
+    "company": "Entreprise",
+    "customerService": "Service client",
+    "copyright": "© {year} Clothify. Tous droits réservés.",
+    "menCollection": "Collection hommes",
+    "womenCollection": "Collection femmes",
+    "newArrivals": "Nouveautés",
+    "sale": "Soldes",
+    "aboutUs": "À propos de nous",
+    "careers": "Carrières",
+    "storeLocator": "Localisateur de magasin",
+    "helpCenter": "Centre d'aide",
+    "shippingReturns": "Livraison & Retours",
+    "sizeGuide": "Guide des tailles",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsService": "Conditions d'utilisation",
+    "cookiePolicy": "Politique relative aux cookies"
+  },
+  "products": {
+    "title": "Produits",
+    "foundProducts": "{count} produits trouvés",
+    "noProducts": "Aucun produit trouvé",
+    "noProductsDescription": "Essayez d’ajuster les filtres ou de rechercher avec un autre mot-clé",
+    "badges": {
+      "new": "Nouveau",
+      "sale": "Promotion",
+      "featured": "En vedette"
+    },
+    "actions": {
+      "addToCart": "Ajouter au panier",
+      "retry": "Réessayer",
+      "clearFilters": "Effacer les filtres"
+    },
+    "errors": {
+      "loadFailed": "Échec du chargement des produits"
+    },
+    "sorting": {
+      "placeholder": "Trier par"
+    }
+  },
+  "filters": {
+    "title": "Filtres",
+    "description": "Filtrer les produits selon les critères",
+    "clearAll": "Tout effacer",
+    "applied": "Appliqué",
+    "search": "Recherche",
+    "searchPlaceholder": "Saisir un mot-clé...",
+    "categories": "Catégories",
+    "sizes": "Tailles",
+    "colors": "Couleurs",
+    "color": "Couleur",
+    "size": "Taille",
+    "priceRange": "Gamme de prix",
+    "featuredOnly": "Produits en vedette uniquement"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "showing": "Affichage de {from} à {to} sur {total}",
+    "pageInfo": "Page {current} / {total}"
+  }
+}

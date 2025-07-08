@@ -1,0 +1,102 @@
+{
+  "navigation": {
+    "home": "首页",
+    "products": "全部商品",
+    "men": "男装",
+    "women": "女装",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "profile": "个人资料",
+    "cart": "购物车"
+  },
+  "actions": {
+    "search": "搜索",
+    "account": "账户",
+    "toggleMenu": "切换菜单",
+    "closeSearch": "关闭搜索",
+    "language": "语言",
+    "theme": "主题"
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "system": "系统"
+  },
+  "placeholders": {
+    "searchPlaceholder": "搜索商品..."
+  },
+  "languages": {
+    "vi": "越南语",
+    "en": "英语",
+    "zh": "中文",
+    "fr": "法语",
+    "de": "德语",
+    "ja": "日语"
+  },
+  "footer": {
+    "contact": "联系我们",
+    "faq": "常见问题",
+    "title": "Clothify",
+    "description": "适合各种场合的高品质服装。优质材料，经典设计。",
+    "shop": "商店",
+    "company": "公司",
+    "customerService": "客户服务",
+    "copyright": "© {year} Clothify。版权所有。",
+    "menCollection": "男士系列",
+    "womenCollection": "女士系列",
+    "newArrivals": "新品上架",
+    "sale": "促销",
+    "aboutUs": "关于我们",
+    "careers": "招聘信息",
+    "storeLocator": "门店查询",
+    "helpCenter": "帮助中心",
+    "shippingReturns": "配送与退货",
+    "sizeGuide": "尺码指南",
+    "privacyPolicy": "隐私政策",
+    "termsService": "服务条款",
+    "cookiePolicy": "Cookie 政策"
+  },
+  "products": {
+    "title": "产品",
+    "foundProducts": "找到 {count} 个产品",
+    "noProducts": "未找到产品",
+    "noProductsDescription": "请尝试调整筛选条件或更换关键词搜索",
+    "badges": {
+      "new": "新品",
+      "sale": "促销",
+      "featured": "推荐"
+    },
+    "actions": {
+      "addToCart": "加入购物车",
+      "retry": "重试",
+      "clearFilters": "清除筛选"
+    },
+    "errors": {
+      "loadFailed": "无法加载产品列表"
+    },
+    "sorting": {
+      "placeholder": "排序方式"
+    }
+  },
+  "filters": {
+    "title": "筛选",
+    "description": "根据条件筛选产品",
+    "clearAll": "清除所有",
+    "applied": "已应用",
+    "search": "搜索",
+    "searchPlaceholder": "请输入关键词...",
+    "categories": "分类",
+    "sizes": "尺寸",
+    "colors": "颜色",
+    "color": "颜色",
+    "size": "尺寸",
+    "priceRange": "价格区间",
+    "featuredOnly": "仅显示推荐产品"
+  },
+  "pagination": {
+    "previous": "上一页",
+    "next": "下一页",
+    "showing": "显示第 {from} - {to} 个，共 {total} 个",
+    "pageInfo": "第 {current} 页 / 共 {total} 页"
+  }
+}

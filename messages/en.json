@@ -1,0 +1,102 @@
+{
+  "navigation": {
+    "home": "Home",
+    "products": "All Products",
+    "men": "Men",
+    "women": "Women",
+    "about": "About",
+    "contact": "Contact",
+    "profile": "Profile",
+    "cart": "Cart"
+  },
+  "actions": {
+    "search": "Search",
+    "account": "Account",
+    "toggleMenu": "Toggle menu",
+    "closeSearch": "Close search",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "placeholders": {
+    "searchPlaceholder": "Search products..."
+  },
+  "languages": {
+    "vi": "Tiếng Việt",
+    "en": "English",
+    "zh": "Chinese",
+    "fr": "French",
+    "de": "German",
+    "ja": "Japanese"
+  },
+  "footer": {
+    "contact": "Contact",
+    "faq": "FAQ",
+    "title": "Clothify",
+    "description": "Premium clothing for every occasion. Quality materials, timeless designs.",
+    "shop": "Shop",
+    "company": "Company",
+    "customerService": "Customer Service",
+    "copyright": "© {year} Clothify. All rights reserved.",
+    "menCollection": "Men's Collection",
+    "womenCollection": "Women's Collection",
+    "newArrivals": "New Arrivals",
+    "sale": "Sale",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "storeLocator": "Store Locator",
+    "helpCenter": "Help Center",
+    "shippingReturns": "Shipping & Returns",
+    "sizeGuide": "Size Guide",
+    "privacyPolicy": "Privacy Policy",
+    "termsService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy"
+  },
+  "products": {
+    "title": "Products",
+    "foundProducts": "{count} products found",
+    "noProducts": "No products found",
+    "noProductsDescription": "Try adjusting filters or searching with different keywords",
+    "badges": {
+      "new": "New",
+      "sale": "Sale",
+      "featured": "Featured"
+    },
+    "actions": {
+      "addToCart": "Add to cart",
+      "retry": "Retry",
+      "clearFilters": "Clear filters"
+    },
+    "errors": {
+      "loadFailed": "Failed to load products"
+    },
+    "sorting": {
+      "placeholder": "Sort by"
+    }
+  },
+  "filters": {
+    "title": "Filters",
+    "description": "Filter products by criteria",
+    "clearAll": "Clear all",
+    "applied": "Applied",
+    "search": "Search",
+    "searchPlaceholder": "Enter keyword...",
+    "categories": "Categories",
+    "sizes": "Sizes",
+    "colors": "Colors",
+    "color": "Color",
+    "size": "Size",
+    "priceRange": "Price range",
+    "featuredOnly": "Featured only"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "showing": "Showing {from}-{to} of {total}",
+    "pageInfo": "Page {current} / {total}"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "navigation": {
+    "home": "ホーム",
+    "products": "すべての商品",
+    "men": "メンズ",
+    "women": "レディース",
+    "about": "会社情報",
+    "contact": "お問い合わせ",
+    "profile": "プロフィール",
+    "cart": "カート"
+  },
+  "actions": {
+    "search": "検索",
+    "account": "アカウント",
+    "toggleMenu": "メニューを切り替え",
+    "closeSearch": "検索を閉じる",
+    "language": "言語",
+    "theme": "テーマ"
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "システム"
+  },
+  "placeholders": {
+    "searchPlaceholder": "商品を検索..."
+  },
+  "languages": {
+    "vi": "ベトナム語",
+    "en": "英語",
+    "zh": "中国語",
+    "fr": "フランス語",
+    "de": "ドイツ語",
+    "ja": "日本語"
+  },
+  "footer": {
+    "contact": "お問い合わせ",
+    "faq": "よくある質問",
+    "title": "Clothify",
+    "description": "あらゆる場面に合う高品質な服。上質な素材、時代を超えたデザイン。",
+    "shop": "ショップ",
+    "company": "会社概要",
+    "customerService": "カスタマーサービス",
+    "copyright": "© {year} Clothify. All rights reserved.",
+    "menCollection": "メンズコレクション",
+    "womenCollection": "レディースコレクション",
+    "newArrivals": "新着商品",
+    "sale": "セール",
+    "aboutUs": "会社概要",
+    "careers": "採用情報",
+    "storeLocator": "店舗検索",
+    "helpCenter": "ヘルプセンター",
+    "shippingReturns": "配送と返品",
+    "sizeGuide": "サイズガイド",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsService": "利用規約",
+    "cookiePolicy": "クッキーポリシー"
+  },
+  "products": {
+    "title": "商品",
+    "foundProducts": "{count} 件の商品が見つかりました",
+    "noProducts": "商品が見つかりません",
+    "noProductsDescription": "フィルターを調整するか、別のキーワードで検索してください",
+    "badges": {
+      "new": "新着",
+      "sale": "セール",
+      "featured": "おすすめ"
+    },
+    "actions": {
+      "addToCart": "カートに追加",
+      "retry": "再試行",
+      "clearFilters": "フィルターをクリア"
+    },
+    "errors": {
+      "loadFailed": "商品リストの読み込みに失敗しました"
+    },
+    "sorting": {
+      "placeholder": "並び替え"
+    }
+  },
+  "filters": {
+    "title": "フィルター",
+    "description": "条件で商品を絞り込む",
+    "clearAll": "すべてクリア",
+    "applied": "適用済み",
+    "search": "検索",
+    "searchPlaceholder": "キーワードを入力...",
+    "categories": "カテゴリー",
+    "sizes": "サイズ",
+    "colors": "カラー",
+    "color": "色",
+    "size": "サイズ",
+    "priceRange": "価格帯",
+    "featuredOnly": "おすすめ商品のみ"
+  },
+  "pagination": {
+    "previous": "前へ",
+    "next": "次へ",
+    "showing": "{total} 件中 {from} 件目から {to} 件目を表示",
+    "pageInfo": "ページ {current} / {total}"
+  }
+}

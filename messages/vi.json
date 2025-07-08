@@ -1,0 +1,123 @@
+{
+  "navigation": {
+    "home": "Trang chủ",
+    "products": "Tất cả sản phẩm",
+    "men": "Nam",
+    "women": "Nữ",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ",
+    "profile": "Hồ sơ",
+    "cart": "Giỏ hàng"
+  },
+  "actions": {
+    "search": "Tìm kiếm",
+    "account": "Tài khoản",
+    "toggleMenu": "Mở/Đóng menu",
+    "closeSearch": "Đóng tìm kiếm",
+    "language": "Ngôn ngữ",
+    "theme": "Giao diện"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  },
+  "placeholders": {
+    "searchPlaceholder": "Tìm kiếm sản phẩm..."
+  },
+  "languages": {
+    "vi": "Tiếng Việt",
+    "en": "Tiếng Anh",
+    "zh": "Tiếng Trung",
+    "fr": "Tiếng Pháp",
+    "de": "Tiếng Đức",
+    "ja": "Tiếng Nhật"
+  },
+  "footer": {
+    "contact": "Liên hệ",
+    "faq": "Câu hỏi thường gặp",
+    "title": "Clothify",
+    "description": "Thời trang cao cấp cho mọi dịp. Chất liệu chất lượng, thiết kế vượt thời gian.",
+    "shop": "Cửa hàng",
+    "company": "Công ty",
+    "customerService": "Dịch vụ khách hàng",
+    "copyright": "© {year} Clothify. Đã đăng ký bản quyền.",
+    "menCollection": "Bộ sưu tập nam",
+    "womenCollection": "Bộ sưu tập nữ",
+    "newArrivals": "Hàng mới về",
+    "sale": "Khuyến mãi",
+    "aboutUs": "Về chúng tôi",
+    "careers": "Tuyển dụng",
+    "storeLocator": "Tìm cửa hàng",
+    "helpCenter": "Trung tâm trợ giúp",
+    "shippingReturns": "Giao hàng & Đổi trả",
+    "sizeGuide": "Hướng dẫn kích cỡ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsService": "Điều khoản dịch vụ",
+    "cookiePolicy": "Chính sách Cookie"
+  },
+  "products": {
+    "title": "Sản phẩm",
+    "foundProducts": "Tìm thấy {count} sản phẩm",
+    "noProducts": "Không tìm thấy sản phẩm nào",
+    "noProductsDescription": "Thử điều chỉnh bộ lọc hoặc tìm kiếm với từ khóa khác",
+    "badges": {
+      "new": "Mới",
+      "sale": "Giảm giá",
+      "featured": "Nổi bật"
+    },
+    "actions": {
+      "addToCart": "Thêm vào giỏ",
+      "retry": "Thử lại",
+      "clearFilters": "Xóa bộ lọc"
+    },
+    "errors": {
+      "loadFailed": "Không thể tải danh sách sản phẩm"
+    },
+    "sorting": {
+      "placeholder": "Sắp xếp theo"
+    },
+    "filters": {
+      "title": "Bộ lọc",
+      "description": "Lọc sản phẩm theo tiêu chí",
+      "clearAll": "Xóa tất cả",
+      "applied": "Đã áp dụng",
+      "search": "Tìm kiếm",
+      "searchPlaceholder": "Nhập từ khóa...",
+      "categories": "Danh mục",
+      "sizes": "Kích thước",
+      "colors": "Màu sắc",
+      "color": "Màu",
+      "size": "Size",
+      "priceRange": "Khoảng giá",
+      "featuredOnly": "Chỉ sản phẩm nổi bật"
+    },
+    "pagination": {
+      "previous": "Trước",
+      "next": "Tiếp",
+      "showing": "Hiển thị {from}-{to} trong tổng số {total}",
+      "pageInfo": "Trang {current} / {total}"
+    }
+  },
+  "filters": {
+    "title": "Bộ lọc",
+    "description": "Lọc sản phẩm theo tiêu chí",
+    "clearAll": "Xóa tất cả",
+    "applied": "Đã áp dụng",
+    "search": "Tìm kiếm",
+    "searchPlaceholder": "Nhập từ khóa...",
+    "categories": "Danh mục",
+    "sizes": "Kích thước",
+    "colors": "Màu sắc",
+    "color": "Màu",
+    "size": "Size",
+    "priceRange": "Khoảng giá",
+    "featuredOnly": "Chỉ sản phẩm nổi bật"
+  },
+  "pagination": {
+    "previous": "Trước",
+    "next": "Tiếp",
+    "showing": "Hiển thị {from}-{to} trong tổng số {total}",
+    "pageInfo": "Trang {current} / {total}"
+  }
+}
